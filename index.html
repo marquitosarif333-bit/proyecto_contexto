@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Universidad NovaTech del Valle | UNOVA</title>
+
+    <!-- =====================================================
+         FUENTE
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://cdnjs.cloudflare.com"
+        crossorigin
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PRELOADER
+    ====================================================== -->
+
+    <div id="preloader">
+
+        <div class="loader"></div>
+
+        <p>
+            Cargando UNOVA...
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         BOTÓN SUBIR
+    ====================================================== -->
+
+    <button id="btnArriba" type="button">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header id="header">
+
+        <div class="contenedor-header">
+
+
+            <!-- =================================================
+                 BOTÓN MENÚ
+                 Se coloca antes del logo para que en celular
+                 aparezca del lado izquierdo.
+            ================================================== -->
+
+            <button
+                id="btnMenu"
+                type="button"
+                aria-label="Abrir menú"
+                aria-controls="menu"
+                aria-expanded="false"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+
+            <!-- =================================================
+                 LOGO
+            ================================================== -->
+
+            <div class="logo">
+
+                <div class="logo-icono">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                </div>
+
+
+                <div class="logo-texto">
+
+                    <h1>
+                        UNOVA
+                    </h1>
+
+                    <span>
+                        Universidad NovaTech del Valle
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MENÚ
+            ================================================== -->
+
+            <nav id="menu">
+
+                <a
+                    href="#inicio"
+                    class="enlace-menu activo"
+                >
+                    Inicio
+                </a>
+
+
+                <a
+                    href="#nosotros"
+                    class="enlace-menu"
+                >
+                    Nosotros
+                </a>
+
+
+                <a
+                    href="#contacto"
+                    class="enlace-menu boton-contacto"
+                >
+                    Contacto
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             INICIO
+        ================================================== -->
+
+        <section
+            id="inicio"
+            class="hero"
+        >
+
+
+            <!-- =================================================
+                 SLIDER
+            ================================================== -->
+
+            <div class="slider">
+
+
+                <!-- IMAGEN PRINCIPAL -->
+
+                <div class="slide activo">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=75&w=1280&auto=format&fit=crop"
+                        srcset="
+                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=75&w=480&auto=format&fit=crop 480w,
+                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=75&w=768&auto=format&fit=crop 768w,
+                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=75&w=1024&auto=format&fit=crop 1024w,
+                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=75&w=1280&auto=format&fit=crop 1280w,
+                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=75&w=1600&auto=format&fit=crop 1600w,
+                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=75&w=1920&auto=format&fit=crop 1920w
+                        "
+                        sizes="100vw"
+                        width="1280"
+                        height="720"
+                        fetchpriority="high"
+                        decoding="async"
+                        alt="Campus universitario"
+                    >
+
+                </div>
+
+
+
+                <!-- SEGUNDA IMAGEN -->
+
+                <div class="slide">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1562774053-701939374585?q=75&w=960&auto=format&fit=crop"
+                        srcset="
+                            https://images.unsplash.com/photo-1562774053-701939374585?q=75&w=480&auto=format&fit=crop 480w,
+                            https://images.unsplash.com/photo-1562774053-701939374585?q=75&w=768&auto=format&fit=crop 768w,
+                            https://images.unsplash.com/photo-1562774053-701939374585?q=75&w=1024&auto=format&fit=crop 1024w,
+                            https://images.unsplash.com/photo-1562774053-701939374585?q=75&w=1280&auto=format&fit=crop 1280w
+                        "
+                        sizes="100vw"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Instalaciones universitarias"
+                    >
+
+                </div>
+
+
+
+                <!-- TERCERA IMAGEN -->
+
+                <div class="slide">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=75&w=960&auto=format&fit=crop"
+                        srcset="
+                            https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=75&w=480&auto=format&fit=crop 480w,
+                            https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=75&w=768&auto=format&fit=crop 768w,
+                            https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=75&w=1024&auto=format&fit=crop 1024w,
+                            https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=75&w=1280&auto=format&fit=crop 1280w
+                        "
+                        sizes="100vw"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Estudiantes universitarios"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CONTENIDO HERO
+            ================================================== -->
+
+            <div class="hero-contenido">
+
+                <span class="etiqueta">
+                    EDUCACIÓN • INNOVACIÓN • EXCELENCIA
+                </span>
+
+
+                <h2>
+
+                    Formando el futuro,
+
+                    <span>
+                        transformando el presente.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Universidad comprometida con la formación integral
+                    de profesionistas capaces de transformar su entorno.
+
+                </p>
+
+
+                <div class="hero-botones">
+
+                    <a
+                        href="#nosotros"
+                        class="btn-principal"
+                    >
+                        Conócenos
+                    </a>
+
+
+                    <a
+                        href="#contacto"
+                        class="btn-secundario"
+                    >
+                        Contacto
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESTADÍSTICAS
+        ================================================== -->
+
+        <section class="estadisticas">
+
+            <div class="contenedor estadisticas-grid">
+
+
+                <div class="estadistica">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    <strong
+                        class="contador"
+                        data-numero="2500"
+                    >
+                        0
+                    </strong>
+
+                    <span>
+                        Estudiantes
+                    </span>
+
+                </div>
+
+
+
+                <div class="estadistica">
+
+                    <i class="fa-solid fa-chalkboard-user"></i>
+
+                    <strong
+                        class="contador"
+                        data-numero="180"
+                    >
+                        0
+                    </strong>
+
+                    <span>
+                        Docentes
+                    </span>
+
+                </div>
+
+
+
+                <div class="estadistica">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <strong
+                        class="contador"
+                        data-numero="25"
+                    >
+                        0
+                    </strong>
+
+                    <span>
+                        Programas académicos
+                    </span>
+
+                </div>
+
+
+
+                <div class="estadistica">
+
+                    <i class="fa-solid fa-award"></i>
+
+                    <strong
+                        class="contador"
+                        data-numero="15"
+                    >
+                        0
+                    </strong>
+
+                    <span>
+                        Años de experiencia
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NOSOTROS
+             
+             AQUÍ SE INTEGRAN:
+             - Quiénes somos
+             - Misión
+             - Visión
+             - Valores
+             - Historia
+        ================================================== -->
+
+        <section
+            id="nosotros"
+            class="seccion"
+        >
+
+            <div class="contenedor">
+
+
+                <!-- =================================================
+                     TÍTULO
+                ================================================== -->
+
+                <div class="titulo-seccion">
+
+                    <span>
+                        CONÓCENOS
+                    </span>
+
+                    <h2>
+                        ¿Quiénes Somos?
+                    </h2>
+
+                    <div class="linea"></div>
+
+                    <p class="subtitulo">
+                        Conoce nuestra identidad, propósito,
+                        valores y trayectoria institucional.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     IMAGEN PRINCIPAL
+                ================================================== -->
+
+                <div class="nosotros-principal">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=75&w=1000&auto=format&fit=crop"
+                        srcset="
+                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=75&w=400&auto=format&fit=crop 400w,
+                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=75&w=600&auto=format&fit=crop 600w,
+                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=75&w=800&auto=format&fit=crop 800w,
+                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=75&w=1000&auto=format&fit=crop 1000w,
+                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=75&w=1200&auto=format&fit=crop 1200w
+                        "
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+                        width="1000"
+                        height="667"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Comunidad universitaria"
+                    >
+
+                </div>
+
+
+
+                <!-- =================================================
+                     QUIÉNES SOMOS
+                ================================================== -->
+
+                <div class="mision-vision-grid">
+
+
+                    <div class="tarjeta-info">
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                        <h3>
+                            ¿Quiénes somos?
+                        </h3>
+
+                        <p>
+                            La Universidad NovaTech del Valle es una
+                            institución de educación superior comprometida
+                            con la formación integral de profesionales
+                            capaces de responder a las necesidades
+                            de la sociedad.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="tarjeta-info">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                        <h3>
+                            Nuestra comunidad
+                        </h3>
+
+                        <p>
+                            Contamos con estudiantes, docentes y
+                            colaboradores que trabajan conjuntamente
+                            para construir una comunidad universitaria
+                            basada en el conocimiento y la innovación.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MISIÓN Y VISIÓN
+                ================================================== -->
+
+                <div class="mision-vision-grid">
+
+
+                    <div class="tarjeta-info">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                        <h3>
+                            Misión
+                        </h3>
+
+                        <p>
+                            Formar profesionales íntegros, competitivos
+                            y comprometidos con su entorno, mediante un
+                            modelo educativo innovador que promueva el
+                            conocimiento, la investigación, el pensamiento
+                            crítico y el desarrollo de soluciones que
+                            contribuyan al bienestar de la sociedad.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="tarjeta-info">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        <h3>
+                            Visión
+                        </h3>
+
+                        <p>
+                            Para el año 2035, la Universidad NovaTech
+                            del Valle será reconocida como una institución
+                            líder en educación superior por su innovación
+                            académica, investigación, tecnología y
+                            compromiso social.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PROPÓSITO
+                ================================================== -->
+
+                <div class="valores-central">
+
+                    <h3>
+                        Miramos hacia adelante
+                    </h3>
+
+                    <p>
+                        Innovamos hoy para construir el futuro.
+                        Buscamos formar profesionales capaces de generar
+                        conocimiento y participar activamente en la
+                        transformación de su comunidad y del país.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     VALORES
+                ================================================== -->
+
+                <div class="titulo-seccion">
+
+                    <span>
+                        NUESTRA IDENTIDAD
+                    </span>
+
+                    <h2>
+                        Valores institucionales
+                    </h2>
+
+                    <div class="linea"></div>
+
+                    <p class="subtitulo">
+                        Los principios que orientan nuestras decisiones
+                        y nuestra forma de actuar.
+                    </p>
+
+                </div>
+
+
+
+                <div class="valores-grid">
+
+
+                    <div class="valor">
+
+                        <div class="valor-icono">
+
+                            <i class="fa-solid fa-scale-balanced"></i>
+
+                        </div>
+
+                        <h3>
+                            Integridad
+                        </h3>
+
+                        <p>
+                            Actuamos siempre con honestidad,
+                            transparencia y responsabilidad.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="valor">
+
+                        <div class="valor-icono">
+
+                            <i class="fa-solid fa-medal"></i>
+
+                        </div>
+
+                        <h3>
+                            Excelencia
+                        </h3>
+
+                        <p>
+                            Buscamos mejorar continuamente en
+                            cada actividad que realizamos.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="valor">
+
+                        <div class="valor-icono">
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                        </div>
+
+                        <h3>
+                            Innovación
+                        </h3>
+
+                        <p>
+                            Promovemos nuevas ideas para resolver
+                            los desafíos del presente y del futuro.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="valor">
+
+                        <div class="valor-icono">
+
+                            <i class="fa-solid fa-handshake"></i>
+
+                        </div>
+
+                        <h3>
+                            Respeto
+                        </h3>
+
+                        <p>
+                            Reconocemos la dignidad y diversidad
+                            de cada integrante de nuestra comunidad.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="valor">
+
+                        <div class="valor-icono">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <h3>
+                            Compromiso
+                        </h3>
+
+                        <p>
+                            Trabajamos con responsabilidad para
+                            alcanzar nuestros objetivos.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="valor">
+
+                        <div class="valor-icono">
+
+                            <i class="fa-solid fa-earth-americas"></i>
+
+                        </div>
+
+                        <h3>
+                            Responsabilidad social
+                        </h3>
+
+                        <p>
+                            Participamos en acciones que contribuyen
+                            al desarrollo de nuestra comunidad.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     HISTORIA
+                ================================================== -->
+
+                <div class="titulo-seccion historia-titulo">
+
+                    <span>
+                        NUESTRO CAMINO
+                    </span>
+
+                    <h2>
+                        Historia
+                    </h2>
+
+                    <div class="linea"></div>
+
+                    <p class="subtitulo">
+                        Nuestra evolución a través del tiempo.
+                    </p>
+
+                </div>
+
+
+
+                <div class="timeline">
+
+
+                    <!-- 1995 - 1996 -->
+
+                    <div class="timeline-item">
+
+
+                        <div class="timeline-imagen">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=75&w=800&auto=format&fit=crop"
+                                srcset="
+                                    https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=75&w=400&auto=format&fit=crop 400w,
+                                    https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=75&w=600&auto=format&fit=crop 600w,
+                                    https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=75&w=800&auto=format&fit=crop 800w,
+                                    https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=75&w=1000&auto=format&fit=crop 1000w
+                                "
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                width="800"
+                                height="533"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Fundación de la universidad"
+                            >
+
+                        </div>
+
+
+                        <div class="timeline-info">
+
+                            <h3>
+                                1995 - 1996
+                            </h3>
+
+                            <p>
+                                Fundación de la universidad
+                                y apertura de las primeras carreras.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- 2005 -->
+
+                    <div class="timeline-item">
+
+
+                        <div class="timeline-imagen">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=75&w=800&auto=format&fit=crop"
+                                srcset="
+                                    https://images.unsplash.com/photo-1513258496099-48168024aec0?q=75&w=400&auto=format&fit=crop 400w,
+                                    https://images.unsplash.com/photo-1513258496099-48168024aec0?q=75&w=600&auto=format&fit=crop 600w,
+                                    https://images.unsplash.com/photo-1513258496099-48168024aec0?q=75&w=800&auto=format&fit=crop 800w,
+                                    https://images.unsplash.com/photo-1513258496099-48168024aec0?q=75&w=1000&auto=format&fit=crop 1000w
+                                "
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                width="800"
+                                height="533"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Expansión universitaria"
+                            >
+
+                        </div>
+
+
+                        <div class="timeline-info">
+
+                            <h3>
+                                2005
+                            </h3>
+
+                            <p>
+                                Expansión académica
+                                y crecimiento institucional.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- 2026 -->
+
+                    <div class="timeline-item">
+
+
+                        <div class="timeline-imagen">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=75&w=800&auto=format&fit=crop"
+                                srcset="
+                                    https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=75&w=400&auto=format&fit=crop 400w,
+                                    https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=75&w=600&auto=format&fit=crop 600w,
+                                    https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=75&w=800&auto=format&fit=crop 800w,
+                                    https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=75&w=1000&auto=format&fit=crop 1000w
+                                "
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                width="800"
+                                height="533"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Universidad actualmente"
+                            >
+
+                        </div>
+
+
+                        <div class="timeline-info">
+
+                            <h3>
+                                2026
+                            </h3>
+
+                            <p>
+                                Modernización tecnológica
+                                y fortalecimiento educativo.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="cta">
+
+            <div class="contenedor">
+
+                <h2>
+                    Construye tu futuro con nosotros
+                </h2>
+
+                <p>
+                    El conocimiento es el primer paso para transformar
+                    tus metas en realidad.
+                </p>
+
+                <a
+                    href="#contacto"
+                    class="btn-principal"
+                >
+
+                    Solicitar información
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTACTO
+        ================================================== -->
+
+        <section
+            id="contacto"
+            class="seccion fondo-gris"
+        >
+
+            <div class="contenedor">
+
+
+                <div class="titulo-seccion">
+
+                    <span>
+                        ESTAMOS PARA AYUDARTE
+                    </span>
+
+                    <h2>
+                        Contacto
+                    </h2>
+
+                    <div class="linea"></div>
+
+                </div>
+
+
+
+                <div class="contacto-grid">
+
+
+                    <!-- INFORMACIÓN -->
+
+                    <div class="informacion-contacto">
+
+                        <h3>
+                            Universidad NovaTech del Valle
+                        </h3>
+
+                        <p>
+                            Ponte en contacto con nosotros para recibir
+                            información sobre nuestros programas académicos.
+                        </p>
+
+
+
+                        <div class="dato-contacto">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <div>
+
+                                <strong>
+                                    Dirección
+                                </strong>
+
+                                <span>
+                                    Av. Universidad 250,
+                                    Ciudad del Valle, México.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="dato-contacto">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <div>
+
+                                <strong>
+                                    Teléfono
+                                </strong>
+
+                                <span>
+                                    777 000 2026
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="dato-contacto">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <div>
+
+                                <strong>
+                                    Correo
+                                </strong>
+
+                                <span>
+                                    contacto@unova.edu.mx
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="dato-contacto">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            <div>
+
+                                <strong>
+                                    Horario
+                                </strong>
+
+                                <span>
+                                    Lunes a viernes · 8:00 a 18:00
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FORMULARIO -->
+
+                    <div class="formulario">
+
+                        <h3>
+                            Solicita información
+                        </h3>
+
+
+                        <form id="formContacto">
+
+
+                            <div class="campo">
+
+                                <label for="nombre">
+                                    Nombre completo
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    placeholder="Escribe tu nombre"
+                                >
+
+                            </div>
+
+
+
+                            <div class="campo">
+
+                                <label for="correo">
+                                    Correo electrónico
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="correo"
+                                    placeholder="correo@ejemplo.com"
+                                >
+
+                            </div>
+
+
+
+                            <div class="campo">
+
+                                <label for="asunto">
+                                    Asunto
+                                </label>
+
+                                <select id="asunto">
+
+                                    <option value="">
+                                        Selecciona una opción
+                                    </option>
+
+                                    <option value="admisiones">
+                                        Admisiones
+                                    </option>
+
+                                    <option value="programas">
+                                        Programas académicos
+                                    </option>
+
+                                    <option value="becas">
+                                        Becas
+                                    </option>
+
+                                    <option value="informacion">
+                                        Información general
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <div class="campo">
+
+                                <label for="mensaje">
+                                    Mensaje
+                                </label>
+
+                                <textarea
+                                    id="mensaje"
+                                    rows="5"
+                                    placeholder="Escribe tu mensaje"
+                                ></textarea>
+
+                            </div>
+
+
+
+                            <button
+                                type="submit"
+                                class="btn-formulario"
+                            >
+
+                                Enviar solicitud
+
+                                <i class="fa-solid fa-paper-plane"></i>
+
+                            </button>
+
+
+                        </form>
+
+
+                        <div id="mensajeFormulario"></div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+
+        <div class="contenedor footer-grid">
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="footer-info">
+
+
+                <div class="footer-logo">
+
+                    <div class="logo-icono">
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            UNOVA
+                        </h2>
+
+                        <span>
+                            Universidad NovaTech del Valle
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Formando profesionales para transformar
+                    el presente y construir el futuro.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- NAVEGACIÓN -->
+
+            <div class="footer-enlaces">
+
+                <h3>
+                    Navegación
+                </h3>
+
+                <a href="#inicio">
+                    Inicio
+                </a>
+
+                <a href="#nosotros">
+                    Nosotros
+                </a>
+
+                <a href="#contacto">
+                    Contacto
+                </a>
+
+            </div>
+
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="footer-enlaces">
+
+                <h3>
+                    Información
+                </h3>
+
+                <a href="#contacto">
+                    Admisiones
+                </a>
+
+                <a href="#contacto">
+                    Becas
+                </a>
+
+                <a href="#contacto">
+                    Programas académicos
+                </a>
+
+            </div>
+
+
+
+            <!-- REDES -->
+
+            <div class="footer-redes">
+
+                <h3>
+                    Síguenos
+                </h3>
+
+                <p>
+                    Mantente informado sobre nuestras actividades.
+                </p>
+
+
+                <div class="redes">
+
+
+                    <a href="#" aria-label="Facebook">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+
+                    <a href="#" aria-label="Instagram">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+
+                    <a href="#" aria-label="X">
+
+                        <i class="fa-brands fa-x-twitter"></i>
+
+                    </a>
+
+
+                    <a href="#" aria-label="YouTube">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Universidad NovaTech del Valle.
+                Todos los derechos reservados.
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JQUERY
+    ====================================================== -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <!-- =====================================================
+         JAVASCRIPT PROPIO
+    ====================================================== -->
+
+    <script src="js/funciones.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1667 @@
+/* =========================================================
+   UNIVERSIDAD NOVATECH DEL VALLE
+   ESTILOS GENERALES
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #172033;
+    background: #ffffff;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================================================
+   PRELOADER
+========================================================= */
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #071a35;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+}
+
+#preloader p {
+    margin-top: 20px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+
+    border: 4px solid rgba(255,255,255,.2);
+    border-top-color: #1d9bf0;
+
+    border-radius: 50%;
+
+    animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,.97);
+
+    box-shadow: 0 2px 15px rgba(0,0,0,.08);
+
+    transition: .3s;
+}
+
+header.scroll {
+    box-shadow: 0 5px 25px rgba(0,0,0,.15);
+}
+
+.contenedor-header {
+    width: 90%;
+    max-width: 1250px;
+
+    height: 82px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.logo-icono {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    background: #0b315f;
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+}
+
+.logo-texto h1 {
+    font-size: 24px;
+
+    color: #0b315f;
+
+    line-height: 1;
+}
+
+.logo-texto span {
+    display: block;
+
+    font-size: 9px;
+
+    color: #667085;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   MENU ESCRITORIO
+========================================================= */
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.enlace-menu {
+    padding: 9px 13px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #344054;
+
+    border-radius: 6px;
+
+    transition: .3s;
+}
+
+.enlace-menu:hover,
+.enlace-menu.activo {
+    color: #0b63ce;
+}
+
+.boton-contacto {
+    background: #0b315f;
+
+    color: white !important;
+
+    margin-left: 8px;
+}
+
+.boton-contacto:hover {
+    background: #0b63ce;
+}
+
+
+/* =========================================================
+   BOTON MENU
+========================================================= */
+
+#btnMenu {
+    display: none;
+
+    border: none;
+
+    background: none;
+
+    font-size: 25px;
+
+    color: #0b315f;
+
+    cursor: pointer;
+
+    padding: 5px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    height: 720px;
+
+    margin-top: 82px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,23,48,.95),
+            rgba(5,23,48,.72),
+            rgba(5,23,48,.35)
+        );
+}
+
+.hero-contenido {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+
+    color: white;
+}
+
+.etiqueta {
+    display: inline-block;
+
+    color: #74c0fc;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+.hero h2 {
+    max-width: 760px;
+
+    font-size: clamp(40px, 5vw, 68px);
+
+    line-height: 1.12;
+
+    margin-bottom: 25px;
+}
+
+.hero h2 span {
+    color: #53b5ff;
+}
+
+.hero p {
+    max-width: 650px;
+
+    font-size: 17px;
+
+    color: #e3e9f1;
+
+    margin-bottom: 35px;
+}
+
+.hero-botones {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn-principal,
+.btn-secundario {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 14px 23px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.btn-principal {
+    background: #0b8df0;
+
+    color: white;
+}
+
+.btn-principal:hover {
+    background: #0875c7;
+
+    transform: translateY(-2px);
+}
+
+.btn-secundario {
+    border: 1px solid rgba(255,255,255,.6);
+
+    color: white;
+}
+
+.btn-secundario:hover {
+    background: white;
+
+    color: #0b315f;
+}
+
+
+/* =========================================================
+   ESTADISTICAS
+========================================================= */
+
+.estadisticas {
+    background: #0b315f;
+
+    color: white;
+}
+
+.estadisticas-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 30px 0;
+}
+
+.estadistica {
+    text-align: center;
+
+    border-right: 1px solid rgba(255,255,255,.15);
+}
+
+.estadistica:last-child {
+    border: none;
+}
+
+.estadistica i {
+    font-size: 23px;
+
+    color: #54b5ff;
+
+    margin-bottom: 8px;
+}
+
+.estadistica strong {
+    display: block;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+}
+
+.estadistica span {
+    font-size: 12px;
+
+    color: #ccd7e5;
+}
+
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+.seccion {
+    padding: 100px 0;
+}
+
+.fondo-gris {
+    background: #f5f7fa;
+}
+
+.seccion-azul {
+    background: #0b315f;
+
+    color: white;
+}
+
+
+/* =========================================================
+   TITULOS
+========================================================= */
+
+.titulo-seccion {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.titulo-seccion > span {
+    color: #0b8df0;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.titulo-seccion h2 {
+    font-size: 38px;
+
+    color: #101828;
+
+    margin-top: 8px;
+}
+
+.linea {
+    width: 55px;
+    height: 4px;
+
+    background: #0b8df0;
+
+    margin: 15px auto;
+}
+
+.subtitulo {
+    max-width: 650px;
+
+    margin: 15px auto 0;
+
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   NOSOTROS
+========================================================= */
+
+.nosotros-principal {
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+.nosotros-principal img {
+    width: 100%;
+
+    max-width: 1000px;
+
+    height: auto;
+
+    margin: auto;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.10);
+}
+
+
+/* =========================================================
+   TARJETAS DE NOSOTROS
+========================================================= */
+
+.mision-vision-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    margin-top: 40px;
+}
+
+.tarjeta-info {
+    background: #ffffff;
+
+    padding: 35px 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    border: 1px solid #eaecf0;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+
+    transition: .3s;
+}
+
+.tarjeta-info:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.09);
+}
+
+.tarjeta-info i {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #eaf6ff;
+
+    color: #0b8df0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.tarjeta-info h3 {
+    font-size: 21px;
+
+    margin-bottom: 12px;
+
+    color: #101828;
+}
+
+.tarjeta-info p {
+    color: #667085;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BLOQUE CENTRAL
+========================================================= */
+
+.valores-central {
+    margin-top: 45px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: #0b315f;
+
+    color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.10);
+}
+
+.valores-central h3 {
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.valores-central p {
+    max-width: 800px;
+
+    margin: auto;
+
+    color: #d8e5f2;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   VALORES
+========================================================= */
+
+.valores-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+.valor {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border: 1px solid #eaecf0;
+
+    transition: .3s;
+}
+
+.valor:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.09);
+
+    border-color: #b8ddfa;
+}
+
+.valor-icono {
+    width: 65px;
+    height: 65px;
+
+    margin: auto auto 20px;
+
+    border-radius: 50%;
+
+    background: #eaf6ff;
+
+    color: #0b8df0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+.valor h3 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+}
+
+.valor p {
+    color: #667085;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   HISTORIA
+========================================================= */
+
+.historia-titulo {
+    margin-top: 90px;
+}
+
+.timeline {
+    margin-top: 50px;
+}
+
+.timeline-item {
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+
+    gap: 40px;
+
+    margin-bottom: 45px;
+
+    align-items: center;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-imagen {
+    overflow: hidden;
+
+    border-radius: 20px;
+}
+
+.timeline-imagen img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    transition: .4s;
+}
+
+.timeline-imagen:hover img {
+    transform: scale(1.04);
+}
+
+.timeline-info h3 {
+    font-size: 24px;
+
+    color: #0b315f;
+
+    margin-bottom: 10px;
+}
+
+.timeline-info p {
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,23,48,.96),
+            rgba(11,49,95,.94)
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 85px 20px;
+}
+
+.cta h2 {
+    font-size: 37px;
+
+    margin-bottom: 12px;
+}
+
+.cta p {
+    color: #d5dfeb;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   CONTACTO
+========================================================= */
+
+.contacto-grid {
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 70px;
+}
+
+.informacion-contacto h3,
+.formulario h3 {
+    font-size: 24px;
+
+    margin-bottom: 12px;
+}
+
+.informacion-contacto > p {
+    color: #667085;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+.dato-contacto {
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+.dato-contacto > i {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    background: #eaf6ff;
+
+    color: #0b8df0;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.dato-contacto strong,
+.dato-contacto span {
+    display: block;
+}
+
+.dato-contacto strong {
+    font-size: 13px;
+}
+
+.dato-contacto span {
+    color: #667085;
+
+    font-size: 12px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   FORMULARIO
+========================================================= */
+
+.formulario {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,.07);
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+
+    border: 1px solid #d0d5dd;
+
+    border-radius: 6px;
+
+    padding: 12px 13px;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: .3s;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #0b8df0;
+
+    box-shadow: 0 0 0 3px rgba(11,141,240,.1);
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.btn-formulario {
+    width: 100%;
+
+    border: none;
+
+    background: #0b315f;
+
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 6px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.btn-formulario:hover {
+    background: #0b8df0;
+}
+
+#mensajeFormulario {
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #061529;
+
+    color: white;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding: 65px 0;
+}
+
+.footer-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.footer-logo .logo-icono {
+    background: #0b8df0;
+}
+
+.footer-logo h2 {
+    font-size: 22px;
+}
+
+.footer-logo span {
+    font-size: 9px;
+
+    color: #98a7ba;
+}
+
+.footer-info p,
+.footer-redes p {
+    color: #98a7ba;
+
+    font-size: 12px;
+
+    max-width: 300px;
+}
+
+.footer-enlaces h3,
+.footer-redes h3 {
+    font-size: 15px;
+
+    margin-bottom: 18px;
+}
+
+.footer-enlaces a {
+    display: block;
+
+    color: #98a7ba;
+
+    font-size: 12px;
+
+    margin-bottom: 9px;
+
+    transition: .3s;
+}
+
+.footer-enlaces a:hover {
+    color: white;
+
+    transform: translateX(4px);
+}
+
+.redes {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.redes a {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 6px;
+
+    background: #102a49;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .3s;
+}
+
+.redes a:hover {
+    background: #0b8df0;
+
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #718198;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   BOTON ARRIBA
+========================================================= */
+
+#btnArriba {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #0b8df0;
+
+    color: white;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 900;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+
+#btnArriba:hover {
+    background: #0b315f;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.slider {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+}
+
+.slide.activo {
+    opacity: 1;
+
+    z-index: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .contenedor-header {
+        width: 92%;
+    }
+
+    .enlace-menu {
+        padding: 8px;
+
+        font-size: 11px;
+    }
+
+    .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline-item {
+        grid-template-columns: 260px 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / CELULAR
+========================================================= */
+
+@media (max-width: 800px) {
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
+    .contenedor-header {
+        height: 70px;
+
+        justify-content: flex-start;
+    }
+
+    #btnMenu {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 42px;
+
+        order: 1;
+
+        flex-shrink: 0;
+    }
+
+    .logo {
+        order: 2;
+
+        margin-left: 10px;
+
+        margin-right: auto;
+    }
+
+    #menu {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        padding: 15px;
+
+        box-shadow: 0 10px 20px rgba(0,0,0,.1);
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 3px;
+    }
+
+    #menu.mostrar {
+        display: flex;
+    }
+
+    .enlace-menu {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px;
+
+        text-align: center;
+
+        font-size: 13px;
+    }
+
+    .boton-contacto {
+        margin-left: 0;
+
+        margin-top: 5px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero {
+        margin-top: 70px;
+
+        height: 650px;
+    }
+
+    .hero-contenido {
+        width: 88%;
+    }
+
+    .hero h2 {
+        font-size: clamp(38px, 8vw, 52px);
+    }
+
+
+    /* -----------------------------------------------------
+       ESTADISTICAS
+    ----------------------------------------------------- */
+
+    .estadisticas-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+    }
+
+    .estadistica {
+        border: none;
+    }
+
+
+    /* -----------------------------------------------------
+       NOSOTROS
+    ----------------------------------------------------- */
+
+    .mision-vision-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       VALORES
+    ----------------------------------------------------- */
+
+    .valores-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* -----------------------------------------------------
+       HISTORIA
+    ----------------------------------------------------- */
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+    .timeline-imagen {
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACTO
+    ----------------------------------------------------- */
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 550px) {
+
+    .contenedor {
+        width: 88%;
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
+    .contenedor-header {
+        width: 92%;
+
+        height: 65px;
+    }
+
+    #btnMenu {
+        width: 40px;
+        height: 40px;
+
+        font-size: 23px;
+    }
+
+    .logo {
+        margin-left: 8px;
+    }
+
+    .logo-icono {
+        width: 40px;
+        height: 40px;
+
+        font-size: 17px;
+    }
+
+    .logo-texto h1 {
+        font-size: 21px;
+    }
+
+    .logo-texto span {
+        display: none;
+    }
+
+    #menu {
+        top: 65px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero {
+        margin-top: 65px;
+
+        height: 620px;
+    }
+
+    .hero-contenido {
+        width: 88%;
+    }
+
+    .etiqueta {
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .hero h2 {
+        font-size: 39px;
+
+        line-height: 1.1;
+    }
+
+    .hero p {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .hero-botones {
+        gap: 10px;
+    }
+
+    .btn-principal,
+    .btn-secundario {
+        padding: 12px 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       ESTADISTICAS
+    ----------------------------------------------------- */
+
+    .estadisticas-grid {
+        grid-template-columns: 1fr 1fr;
+
+        padding: 25px 0;
+
+        gap: 20px 10px;
+    }
+
+    .estadistica i {
+        font-size: 20px;
+    }
+
+    .estadistica strong {
+        font-size: 25px;
+    }
+
+    .estadistica span {
+        font-size: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       SECCIONES
+    ----------------------------------------------------- */
+
+    .seccion {
+        padding: 75px 0;
+    }
+
+    .titulo-seccion {
+        margin-bottom: 40px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 30px;
+
+        line-height: 1.2;
+    }
+
+    .subtitulo {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       IMAGEN NOSOTROS
+    ----------------------------------------------------- */
+
+    .nosotros-principal {
+        margin-top: 20px;
+    }
+
+    .nosotros-principal img {
+        border-radius: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       TARJETAS
+    ----------------------------------------------------- */
+
+    .tarjeta-info {
+        padding: 28px 20px;
+
+        border-radius: 15px;
+    }
+
+    .tarjeta-info i {
+        width: 60px;
+        height: 60px;
+
+        font-size: 25px;
+    }
+
+    .tarjeta-info h3 {
+        font-size: 19px;
+    }
+
+    .tarjeta-info p {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       BLOQUE CENTRAL
+    ----------------------------------------------------- */
+
+    .valores-central {
+        padding: 30px 20px;
+
+        margin-top: 30px;
+    }
+
+    .valores-central h3 {
+        font-size: 21px;
+    }
+
+    .valores-central p {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       VALORES
+    ----------------------------------------------------- */
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .valor {
+        padding: 30px 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       HISTORIA
+    ----------------------------------------------------- */
+
+    .historia-titulo {
+        margin-top: 70px;
+    }
+
+    .timeline {
+        margin-top: 35px;
+    }
+
+    .timeline-item {
+        margin-bottom: 35px;
+    }
+
+    .timeline-imagen img {
+        height: 210px;
+
+        border-radius: 15px;
+    }
+
+    .timeline-info h3 {
+        font-size: 21px;
+    }
+
+    .timeline-info p {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACTO
+    ----------------------------------------------------- */
+
+    .formulario {
+        padding: 25px 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       CTA
+    ----------------------------------------------------- */
+
+    .cta {
+        padding: 70px 20px;
+    }
+
+    .cta h2 {
+        font-size: 29px;
+    }
+
+    .cta p {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 50px 0;
+    }
+
+    .footer-bottom {
+        padding: 18px 15px;
+
+        font-size: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       BOTON ARRIBA
+    ----------------------------------------------------- */
+
+    #btnArriba {
+        right: 15px;
+
+        bottom: 15px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+}
