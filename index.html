@@ -1,1461 +1,489 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Universidad NovaTech del Valle | UNOVA</title>
 
-    <!-- =====================================================
-         FUENTE
-    ====================================================== -->
-
+    <!-- PRECONEXIÓN RÁPIDA -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <!-- ESTILOS CRÍTICOS INLINE PARA ELIMINAR EL BLOQUEO DE RENDERIZADO -->
+    <style>
+        :root {
+            --bg-main: #fcf8f2; --green-ghibli: #4a7c59; --green-light: #e8f0e9;
+            --sky-blue: #6ba3be; --terracotta: #c86d51; --wood-dark: #2c3e35;
+            --text-dark: #333; --card-bg: #fff; --border-soft: #e2ded4;
+        }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:system-ui,-apple-system,sans-serif;color:var(--text-dark);background:var(--bg-main);line-height:1.6;overflow-x:hidden}
+        header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(252,248,242,0.96);border-bottom:2px solid var(--border-soft)}
+        .contenedor-header{width:90%;max-width:1250px;height:75px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+        .logo{display:flex;align-items:center;gap:10px}
+        .logo-icono{width:42px;height:42px;background:var(--green-ghibli);color:white;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:20px}
+        .logo-texto h1{font-size:22px;color:var(--wood-dark)}
+        .logo-texto span{display:block;font-size:10px;color:#626c66}
+        nav{display:flex;align-items:center;gap:6px}
+        .enlace-menu{padding:8px 14px;font-size:13px;font-weight:700;color:var(--wood-dark);border-radius:18px;text-decoration:none}
+        .enlace-menu:hover,.enlace-menu.activo{color:var(--green-ghibli);background:var(--green-light)}
+        .boton-contacto{background:var(--terracotta);color:white!important}
+        #btnMenu{display:none;border:none;background:none;font-size:24px;color:var(--wood-dark);cursor:pointer}
+        .hero{height:620px;margin-top:75px;position:relative;display:flex;align-items:center;overflow:hidden;background:linear-gradient(90deg,rgba(44,62,53,0.85),rgba(74,124,89,0.5))}
+        .hero-contenido{width:90%;max-width:1200px;margin:auto;position:relative;z-index:2;color:white}
+        .etiqueta{display:inline-block;background:rgba(255,255,255,0.2);padding:5px 12px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:15px}
+        .hero h2{max-width:700px;font-size:clamp(32px,5vw,54px);line-height:1.15;margin-bottom:18px}
+        .hero h2 span{color:#f7d58b}
+        .hero p{max-width:580px;font-size:16px;margin-bottom:25px;color:#e9f0ec}
+        .hero-botones{display:flex;gap:12px}
+        .btn-principal,.btn-secundario{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:20px;font-size:13px;font-weight:700;text-decoration:none}
+        .btn-principal{background:var(--terracotta);color:white}
+        .btn-secundario{border:2px solid white;color:white}
+        #preloader{position:fixed;inset:0;background:var(--wood-dark);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+        .loader{width:40px;height:40px;border:3px solid rgba(255,255,255,0.2);border-top-color:var(--terracotta);border-radius:50%;animation:girar 0.8s linear infinite}
+        @keyframes girar{to{transform:rotate(360deg)}}
+        @media(max-width:800px){#btnMenu{display:flex}nav{display:none}}
+    </style>
 
+    <!-- CARGA DIFERIDA DE ESTILOS SECUNDARIOS -->
+    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
 
-    <!-- =====================================================
-         FONT AWESOME
-    ====================================================== -->
-
-    <link
-        rel="preconnect"
-        href="https://cdnjs.cloudflare.com"
-        crossorigin
-    >
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
-
-    <!-- =====================================================
-         CSS
-    ====================================================== -->
-
-    <link rel="stylesheet" href="css/styles.css">
-
+    <!-- FONT AWESOME ASÍNCRONO -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
 </head>
-
 
 <body>
 
-
-    <!-- =====================================================
-         PRELOADER
-    ====================================================== -->
-
     <div id="preloader">
-
         <div class="loader"></div>
-
-        <p>
-            Cargando UNOVA...
-        </p>
-
+        <p>Cargando UNOVA...</p>
     </div>
 
-
-
-    <!-- =====================================================
-         BOTÓN SUBIR
-    ====================================================== -->
-
-    <button
-        id="btnArriba"
-        type="button"
-        aria-label="Volver al inicio"
-    >
-
-        <i class="fa-solid fa-arrow-up"></i>
-
+    <button id="btnArriba" type="button" aria-label="Volver al inicio">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
     </button>
 
-
-
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
-
     <header id="header">
-
         <div class="contenedor-header">
-
-
-            <!-- =================================================
-                 BOTÓN MENÚ
-                 En celular aparecerá del lado izquierdo.
-            ================================================== -->
-
-            <button
-                id="btnMenu"
-                type="button"
-                aria-label="Abrir menú"
-                aria-controls="menu"
-                aria-expanded="false"
-            >
-
+            <button id="btnMenu" type="button" aria-label="Abrir menú">
                 <i class="fa-solid fa-bars"></i>
-
             </button>
 
-
-
-            <!-- =================================================
-                 LOGO
-            ================================================== -->
-
             <div class="logo">
-
-                <div class="logo-icono">
-
-                    <i class="fa-solid fa-building-columns"></i>
-
-                </div>
-
-
+                <div class="logo-icono"><i class="fa-solid fa-tree"></i></div>
                 <div class="logo-texto">
-
-                    <h1>
-                        UNOVA
-                    </h1>
-
-                    <span>
-                        Universidad NovaTech del Valle
-                    </span>
-
+                    <h1>UNOVA</h1>
+                    <span>Universidad NovaTech del Valle</span>
                 </div>
-
             </div>
-
-
-
-            <!-- =================================================
-                 MENÚ
-            ================================================== -->
 
             <nav id="menu">
-
-                <a
-                    href="#inicio"
-                    class="enlace-menu activo"
-                >
-                    Inicio
-                </a>
-
-
-                <a
-                    href="#nosotros"
-                    class="enlace-menu"
-                >
-                    Nosotros
-                </a>
-
-
-                <a
-                    href="#contacto"
-                    class="enlace-menu boton-contacto"
-                >
-                    Contacto
-                </a>
-
+                <a href="#inicio" class="enlace-menu activo">Inicio</a>
+                <a href="#nosotros" class="enlace-menu">Nosotros</a>
+                <a href="#contacto" class="enlace-menu boton-contacto">Contacto</a>
             </nav>
-
         </div>
-
     </header>
 
-
-
-    <!-- =====================================================
-         CONTENIDO PRINCIPAL
-    ====================================================== -->
-
     <main>
-
-
-        <!-- =================================================
-             INICIO
-        ================================================== -->
-
-        <section
-            id="inicio"
-            class="hero"
-        >
-
-
-            <!-- =================================================
-                 SLIDER
-            ================================================== -->
-
+        <section id="inicio" class="hero">
             <div class="slider">
-
-
-                <!-- =================================================
-                     IMAGEN 1 - CAMPUS
-                ================================================== -->
-
                 <div class="slide activo">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1280&q=75"
-                        srcset="
-                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=480&q=75 480w,
-                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=768&q=75 768w,
-                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1024&q=75 1024w,
-                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1280&q=75 1280w,
-                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=75 1600w,
-                            https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=75 1920w
-                        "
-                        sizes="100vw"
-                        width="1280"
-                        height="720"
-                        fetchpriority="high"
-                        decoding="async"
-                        alt="Campus universitario de la Universidad NovaTech del Valle"
-                    >
-
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=60" 
+                         width="800" height="450" fetchpriority="high" decoding="async" alt="Campus estilo Ghibli">
                 </div>
-
-
-
-                <!-- =================================================
-                     IMAGEN 2 - INSTALACIONES
-                ================================================== -->
-
                 <div class="slide">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1280&q=75"
-                        srcset="
-                            https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=480&q=75 480w,
-                            https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=768&q=75 768w,
-                            https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1024&q=75 1024w,
-                            https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1280&q=75 1280w
-                        "
-                        sizes="100vw"
-                        width="1280"
-                        height="720"
-                        loading="lazy"
-                        decoding="async"
-                        alt="Instalaciones universitarias"
-                    >
-
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=60" 
+                         width="800" height="450" loading="lazy" decoding="async" alt="Instalaciones">
                 </div>
-
-
-
-                <!-- =================================================
-                     IMAGEN 3 - ESTUDIANTES
-                ================================================== -->
-
                 <div class="slide">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1280&q=75"
-                        srcset="
-                            https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=480&q=75 480w,
-                            https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=768&q=75 768w,
-                            https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1024&q=75 1024w,
-                            https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1280&q=75 1280w
-                        "
-                        sizes="100vw"
-                        width="1280"
-                        height="720"
-                        loading="lazy"
-                        decoding="async"
-                        alt="Estudiantes universitarios"
-                    >
-
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=60" 
+                         width="800" height="450" loading="lazy" decoding="async" alt="Estudiantes">
                 </div>
-
-
             </div>
-
-
-
-            <!-- =================================================
-                 CONTENIDO HERO
-            ================================================== -->
 
             <div class="hero-contenido">
-
-                <span class="etiqueta">
-                    EDUCACIÓN • INNOVACIÓN • EXCELENCIA
-                </span>
-
-
-                <h2>
-
-                    Formando el futuro,
-
-                    <span>
-                        transformando el presente.
-                    </span>
-
-                </h2>
-
-
-                <p>
-
-                    Universidad comprometida con la formación integral
-                    de profesionistas capaces de transformar su entorno.
-
-                </p>
-
-
+                <span class="etiqueta">🌱 EDUCACIÓN • INNOVACIÓN • NATURALEZA</span>
+                <h2>Formando el futuro, <span>transformando el presente.</span></h2>
+                <p>Una experiencia educativa inspiradora, integrada con la innovación y el desarrollo humano integral.</p>
                 <div class="hero-botones">
-
-                    <a
-                        href="#nosotros"
-                        class="btn-principal"
-                    >
-                        Conócenos
-                    </a>
-
-
-                    <a
-                        href="#contacto"
-                        class="btn-secundario"
-                    >
-                        Contacto
-                    </a>
-
+                    <a href="#nosotros" class="btn-principal">Conócenos</a>
+                    <a href="#contacto" class="btn-secundario">Contacto</a>
                 </div>
-
             </div>
-
         </section>
-
-
-
-        <!-- =================================================
-             ESTADÍSTICAS
-        ================================================== -->
 
         <section class="estadisticas">
-
             <div class="contenedor estadisticas-grid">
-
-
                 <div class="estadistica">
-
                     <i class="fa-solid fa-user-graduate"></i>
-
-                    <strong
-                        class="contador"
-                        data-numero="2500"
-                    >
-                        0
-                    </strong>
-
-                    <span>
-                        Estudiantes
-                    </span>
-
+                    <strong class="contador" data-numero="2500">0</strong>
+                    <span>Estudiantes</span>
                 </div>
-
-
-
                 <div class="estadistica">
-
                     <i class="fa-solid fa-chalkboard-user"></i>
-
-                    <strong
-                        class="contador"
-                        data-numero="180"
-                    >
-                        0
-                    </strong>
-
-                    <span>
-                        Docentes
-                    </span>
-
+                    <strong class="contador" data-numero="180">0</strong>
+                    <span>Docentes</span>
                 </div>
-
-
-
                 <div class="estadistica">
-
                     <i class="fa-solid fa-book-open"></i>
-
-                    <strong
-                        class="contador"
-                        data-numero="25"
-                    >
-                        0
-                    </strong>
-
-                    <span>
-                        Programas académicos
-                    </span>
-
+                    <strong class="contador" data-numero="25">0</strong>
+                    <span>Programas</span>
                 </div>
-
-
-
                 <div class="estadistica">
-
                     <i class="fa-solid fa-award"></i>
-
-                    <strong
-                        class="contador"
-                        data-numero="15"
-                    >
-                        0
-                    </strong>
-
-                    <span>
-                        Años de experiencia
-                    </span>
-
+                    <strong class="contador" data-numero="15">0</strong>
+                    <span>Años de Magia</span>
                 </div>
-
-
             </div>
-
         </section>
 
-
-
-        <!-- =================================================
-             NOSOTROS
-
-             AQUÍ SE INTEGRAN:
-             - Quiénes somos
-             - Nuestra comunidad
-             - Misión
-             - Visión
-             - Propósito
-             - Valores
-             - Historia
-        ================================================== -->
-
-        <section
-            id="nosotros"
-            class="seccion"
-        >
-
+        <section id="nosotros" class="seccion">
             <div class="contenedor">
-
-
-                <!-- =================================================
-                     TÍTULO
-                ================================================== -->
-
                 <div class="titulo-seccion">
-
-                    <span>
-                        CONÓCENOS
-                    </span>
-
-                    <h2>
-                        ¿Quiénes Somos?
-                    </h2>
-
+                    <span>CONÓCENOS</span>
+                    <h2>Nuestra Identidad</h2>
                     <div class="linea"></div>
-
-                    <p class="subtitulo">
-                        Conoce nuestra identidad, propósito,
-                        valores y trayectoria institucional.
-                    </p>
-
                 </div>
 
-
-
-                <!-- =================================================
-                     IMAGEN 4 - COMUNIDAD UNIVERSITARIA
-                ================================================== -->
-
-                <div class="nosotros-principal">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=75"
-                        srcset="
-                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=75 400w,
-                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=75 600w,
-                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=75 800w,
-                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=75 1000w,
-                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=75 1200w
-                        "
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
-                        width="1000"
-                        height="667"
-                        loading="lazy"
-                        decoding="async"
-                        alt="Comunidad universitaria de UNOVA"
-                    >
-
-                </div>
-
-
-
-                <!-- =================================================
-                     QUIÉNES SOMOS
-                ================================================== -->
-
-                <div class="mision-vision-grid">
-
-
-                    <div class="tarjeta-info">
-
-                        <i class="fa-solid fa-building-columns"></i>
-
-                        <h3>
-                            ¿Quiénes somos?
-                        </h3>
-
-                        <p>
-                            La Universidad NovaTech del Valle es una
-                            institución de educación superior comprometida
-                            con la formación integral de profesionales
-                            capaces de responder a las necesidades
-                            de la sociedad.
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="tarjeta-info">
-
-                        <i class="fa-solid fa-graduation-cap"></i>
-
-                        <h3>
-                            Nuestra comunidad
-                        </h3>
-
-                        <p>
-                            Contamos con estudiantes, docentes y
-                            colaboradores que trabajan conjuntamente
-                            para construir una comunidad universitaria
-                            basada en el conocimiento y la innovación.
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- =================================================
-                     MISIÓN Y VISIÓN
-                ================================================== -->
-
-                <div class="mision-vision-grid">
-
-
-                    <div class="tarjeta-info">
-
+                <div class="mision-vision-contenedor">
+                    <div class="tarjeta-info tarjeta-mision">
                         <i class="fa-solid fa-bullseye"></i>
-
-                        <h3>
-                            Misión
-                        </h3>
-
-                        <p>
-                            Formar profesionales íntegros, competitivos
-                            y comprometidos con su entorno, mediante un
-                            modelo educativo innovador que promueva el
-                            conocimiento, la investigación, el pensamiento
-                            crítico y el desarrollo de soluciones que
-                            contribuyan al bienestar de la sociedad.
-                        </p>
-
+                        <h3>Misión</h3>
+                        <p>Formar profesionales íntegros, competitivos y comprometidos mediante un modelo educativo innovador.</p>
                     </div>
 
+                    <div class="imagen-central-ghibli">
+                        <div class="circulo-decorativo"><i class="fa-solid fa-seedling"></i></div>
+                    </div>
 
-
-                    <div class="tarjeta-info">
-
+                    <div class="tarjeta-info tarjeta-vision">
                         <i class="fa-solid fa-eye"></i>
-
-                        <h3>
-                            Visión
-                        </h3>
-
-                        <p>
-                            Para el año 2035, la Universidad NovaTech
-                            del Valle será reconocida como una institución
-                            líder en educación superior por su innovación
-                            académica, investigación, tecnología y
-                            compromiso social.
-                        </p>
-
+                        <h3>Visión</h3>
+                        <p>Ser reconocidos como una institución líder en educación superior por nuestra excelencia e impacto.</p>
                     </div>
-
-
                 </div>
 
-
-
-                <!-- =================================================
-                     PROPÓSITO
-                ================================================== -->
-
-                <div class="valores-central">
-
-                    <h3>
-                        Miramos hacia adelante
-                    </h3>
-
-                    <p>
-                        Innovamos hoy para construir el futuro.
-                        Buscamos formar profesionales capaces de generar
-                        conocimiento y participar activamente en la
-                        transformación de su comunidad y del país.
-                    </p>
-
-                </div>
-
-
-
-                <!-- =================================================
-                     VALORES
-                ================================================== -->
-
-                <div class="titulo-seccion">
-
-                    <span>
-                        NUESTRA IDENTIDAD
-                    </span>
-
-                    <h2>
-                        Valores institucionales
-                    </h2>
-
+                <div class="titulo-seccion margin-top-seccion">
+                    <span>PRINCIPIOS</span>
+                    <h2>Valores</h2>
                     <div class="linea"></div>
-
-                    <p class="subtitulo">
-                        Los principios que orientan nuestras decisiones
-                        y nuestra forma de actuar.
-                    </p>
-
                 </div>
-
-
 
                 <div class="valores-grid">
-
-
-                    <!-- VALOR 1 -->
-
                     <div class="valor">
-
-                        <div class="valor-icono">
-
-                            <i class="fa-solid fa-scale-balanced"></i>
-
-                        </div>
-
-                        <h3>
-                            Integridad
-                        </h3>
-
-                        <p>
-                            Actuamos siempre con honestidad,
-                            transparencia y responsabilidad.
-                        </p>
-
+                        <div class="valor-icono"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <h3>Integridad</h3>
+                        <p>Honestidad y transparencia.</p>
                     </div>
-
-
-
-                    <!-- VALOR 2 -->
-
                     <div class="valor">
-
-                        <div class="valor-icono">
-
-                            <i class="fa-solid fa-medal"></i>
-
-                        </div>
-
-                        <h3>
-                            Excelencia
-                        </h3>
-
-                        <p>
-                            Buscamos mejorar continuamente en
-                            cada actividad que realizamos.
-                        </p>
-
+                        <div class="valor-icono"><i class="fa-solid fa-leaf"></i></div>
+                        <h3>Excelencia</h3>
+                        <p>Crecimiento continuo.</p>
                     </div>
-
-
-
-                    <!-- VALOR 3 -->
-
                     <div class="valor">
-
-                        <div class="valor-icono">
-
-                            <i class="fa-solid fa-lightbulb"></i>
-
-                        </div>
-
-                        <h3>
-                            Innovación
-                        </h3>
-
-                        <p>
-                            Promovemos nuevas ideas para resolver
-                            los desafíos del presente y del futuro.
-                        </p>
-
+                        <div class="valor-icono"><i class="fa-solid fa-lightbulb"></i></div>
+                        <h3>Innovación</h3>
+                        <p>Nuevas ideas para transformar.</p>
                     </div>
-
-
-
-                    <!-- VALOR 4 -->
-
                     <div class="valor">
-
-                        <div class="valor-icono">
-
-                            <i class="fa-solid fa-handshake"></i>
-
-                        </div>
-
-                        <h3>
-                            Respeto
-                        </h3>
-
-                        <p>
-                            Reconocemos la dignidad y diversidad
-                            de cada integrante de nuestra comunidad.
-                        </p>
-
+                        <div class="valor-icono"><i class="fa-solid fa-handshake"></i></div>
+                        <h3>Respeto</h3>
+                        <p>Dignidad humana.</p>
                     </div>
-
-
-
-                    <!-- VALOR 5 -->
-
-                    <div class="valor">
-
-                        <div class="valor-icono">
-
-                            <i class="fa-solid fa-users"></i>
-
-                        </div>
-
-                        <h3>
-                            Compromiso
-                        </h3>
-
-                        <p>
-                            Trabajamos con responsabilidad para
-                            alcanzar nuestros objetivos.
-                        </p>
-
-                    </div>
-
-
-
-                    <!-- VALOR 6 -->
-
-                    <div class="valor">
-
-                        <div class="valor-icono">
-
-                            <i class="fa-solid fa-earth-americas"></i>
-
-                        </div>
-
-                        <h3>
-                            Responsabilidad social
-                        </h3>
-
-                        <p>
-                            Participamos en acciones que contribuyen
-                            al desarrollo de nuestra comunidad.
-                        </p>
-
-                    </div>
-
-
                 </div>
-
-
-
-                <!-- =================================================
-                     HISTORIA
-                ================================================== -->
 
                 <div class="titulo-seccion historia-titulo">
-
-                    <span>
-                        NUESTRO CAMINO
-                    </span>
-
-                    <h2>
-                        Historia
-                    </h2>
-
+                    <span>NUESTRO CAMINO</span>
+                    <h2>Historia</h2>
                     <div class="linea"></div>
-
-                    <p class="subtitulo">
-                        Nuestra evolución a través del tiempo.
-                    </p>
-
                 </div>
-
-
 
                 <div class="timeline">
-
-
-                    <!-- =================================================
-                         HISTORIA 1 - 1995 / 1996
-                    ================================================== -->
-
                     <div class="timeline-item">
+                        <div class="timeline-imagen"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=50" width="400" height="240" loading="lazy" decoding="async" alt="Fundación"></div>
+                        <div class="timeline-info"><h3>1995 - 1996</h3><p>Fundación de la universidad.</p></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-imagen"><img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=50" width="400" height="240" loading="lazy" decoding="async" alt="Expansión"></div>
+                        <div class="timeline-info"><h3>2005</h3><p>Expansión del campus.</p></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-imagen"><img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=400&q=50" width="400" height="240" loading="lazy" decoding="async" alt="Actualidad"></div>
+                        <div class="timeline-info"><h3>2026</h3><p>Modernización tecnológica.</p></div>
+                    </div>
+                </div>
 
-
-                        <div class="timeline-imagen">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=75"
-                                srcset="
-                                    https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=75 400w,
-                                    https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=75 600w,
-                                    https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=75 800w,
-                                    https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=75 1000w
-                                "
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                width="800"
-                                height="533"
-                                loading="lazy"
-                                decoding="async"
-                                alt="Fundación de la Universidad NovaTech del Valle"
-                            >
-
-                        </div>
-
-
-                        <div class="timeline-info">
-
-                            <h3>
-                                1995 - 1996
-                            </h3>
-
-                            <p>
-                                Fundación de la universidad
-                                y apertura de las primeras carreras.
-                            </p>
-
-                        </div>
-
-
+                <!-- ORGANIGRAMA AGREGADO AL FINAL DE LA SECCIÓN NOSOTROS -->
+                <div id="organigrama" class="organigrama-seccion-integrada">
+                    <div class="titulo-seccion">
+                        <span>ESTRUCTURA INSTITUCIONAL</span>
+                        <h2>Organigrama</h2>
+                        <div class="linea"></div>
+                        <p style="font-size: 12px; color: #626c66; margin-top: 5px;">Estructura de mando de los 13 integrantes (desliza sobre las cajas para ver correo o puesto completo).</p>
                     </div>
 
-
-
-                    <!-- =================================================
-                         HISTORIA 2 - 2005
-                    ================================================== -->
-
-                    <div class="timeline-item">
-
-
-                        <div class="timeline-imagen">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=75"
-                                srcset="
-                                    https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=75 400w,
-                                    https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=75 600w,
-                                    https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=75 800w,
-                                    https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1000&q=75 1000w
-                                "
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                width="800"
-                                height="533"
-                                loading="lazy"
-                                decoding="async"
-                                alt="Expansión académica de la universidad"
-                            >
-
+                    <div class="organigrama-tree">
+                        <!-- Nivel 1: Román Gutiérrez -->
+                        <div class="organigrama-nivel nivel-root">
+                            <div class="nodo-organigrama">
+                                <div class="avatar-espacio">
+                                    <!-- AQUÍ COLOCAS TU IMAGEN -->
+                                </div>
+                                <div class="nodo-info">
+                                    <div class="header-tarjeta">
+                                        <span class="etiqueta-correo">CORREO</span>
+                                        <a href="mailto:roman@eatvikings.com" class="correo">roman@eatvikings.com</a>
+                                    </div>
+                                    <h4>Román Gutiérrez</h4>
+                                    <span class="puesto">Puesto: Director General / Rey Valhalla</span>
+                                </div>
+                            </div>
                         </div>
 
+                        <div class="linea-vertical"></div>
 
-                        <div class="timeline-info">
-
-                            <h3>
-                                2005
-                            </h3>
-
-                            <p>
-                                Expansión académica
-                                y crecimiento institucional.
-                            </p>
-
+                        <!-- Nivel 2: Nicolás Giles & Marcos Arif -->
+                        <div class="organigrama-nivel nivel-sub">
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:nicolas@eatvikings.com" class="correo">nicolas@eatvikings.com</a>
+                                        </div>
+                                        <h4>Nicolas Giles</h4>
+                                        <span class="puesto">Puesto: Subdirector General</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:marcos@eatvikings.com" class="correo">marcos@eatvikings.com</a>
+                                        </div>
+                                        <h4>Marcos Arif</h4>
+                                        <span class="puesto">Puesto: Gerente de Operaciones</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
+                        <div class="linea-vertical"></div>
+
+                        <!-- Nivel 3: Estefania, Juan, Eder -->
+                        <div class="organigrama-nivel nivel-sub">
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:estefania@eatvikings.com" class="correo">estefania@eatvikings.com</a>
+                                        </div>
+                                        <h4>Estefania Asseneth</h4>
+                                        <span class="puesto">Puesto: Recursos Humanos</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:juan@eatvikings.com" class="correo">juan@eatvikings.com</a>
+                                        </div>
+                                        <h4>Juan Ocampo</h4>
+                                        <span class="puesto">Puesto: Jefe de Marketing</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:eder@eatvikings.com" class="correo">eder@eatvikings.com</a>
+                                        </div>
+                                        <h4>Eder</h4>
+                                        <span class="puesto">Puesto: Coordinador de Reservas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="linea-vertical" style="height:40px;"></div>
+
+                        <!-- Nivel 4: Enrique Becerril -->
+                        <div class="organigrama-nivel nivel-sub">
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:enrique@eatvikings.com" class="correo">enrique@eatvikings.com</a>
+                                        </div>
+                                        <h4>Enrique Becerril</h4>
+                                        <span class="puesto">Puesto: Chef Ejecutivo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="linea-vertical"></div>
+
+                        <!-- Nivel 5: Eros, Eduardo, Luis -->
+                        <div class="organigrama-nivel nivel-sub">
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:eros@eatvikings.com" class="correo">eros@eatvikings.com</a>
+                                        </div>
+                                        <h4>Eros Ramses</h4>
+                                        <span class="puesto">Puesto: Supervisor de Calidad</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:eduardo@eatvikings.com" class="correo">eduardo@eatvikings.com</a>
+                                        </div>
+                                        <h4>Eduardo Garcia</h4>
+                                        <span class="puesto">Puesto: Sommelier de Hidromiel</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:luis@eatvikings.com" class="correo">luis@eatvikings.com</a>
+                                        </div>
+                                        <h4>Luis Joaquin</h4>
+                                        <span class="puesto">Puesto: Maestro Parrillero</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="linea-vertical"></div>
+
+                        <!-- Nivel 6: Carmen, Ismael, Angel -->
+                        <div class="organigrama-nivel nivel-sub">
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:carmen@eatvikings.com" class="correo">carmen@eatvikings.com</a>
+                                        </div>
+                                        <h4>Carmen Barajas</h4>
+                                        <span class="puesto">Puesto: Jefa de Finanzas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:ismael@eatvikings.com" class="correo">ismael@eatvikings.com</a>
+                                        </div>
+                                        <h4>Ismael Flores</h4>
+                                        <span class="puesto">Puesto: Diseñador Temático</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rama">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:angel@eatvikings.com" class="correo">angel@eatvikings.com</a>
+                                        </div>
+                                        <h4>Angel</h4>
+                                        <span class="puesto">Puesto: Encargado de Compras</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
-
-
-
-                    <!-- =================================================
-                         HISTORIA 3 - 2026
-                    ================================================== -->
-
-                    <div class="timeline-item">
-
-
-                        <div class="timeline-imagen">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=800&q=75"
-                                srcset="
-                                    https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=400&q=75 400w,
-                                    https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=75 600w,
-                                    https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=800&q=75 800w,
-                                    https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=75 1000w
-                                "
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                width="800"
-                                height="533"
-                                loading="lazy"
-                                decoding="async"
-                                alt="Universidad NovaTech del Valle actualmente"
-                            >
-
-                        </div>
-
-
-                        <div class="timeline-info">
-
-                            <h3>
-                                2026
-                            </h3>
-
-                            <p>
-                                Modernización tecnológica
-                                y fortalecimiento educativo.
-                            </p>
-
-                        </div>
-
-
-                    </div>
-
-
                 </div>
 
             </div>
-
         </section>
-
-
-
-        <!-- =================================================
-             CTA
-        ================================================== -->
 
         <section class="cta">
-
             <div class="contenedor">
-
-                <h2>
-                    Construye tu futuro con nosotros
-                </h2>
-
-                <p>
-                    El conocimiento es el primer paso para transformar
-                    tus metas en realidad.
-                </p>
-
-                <a
-                    href="#contacto"
-                    class="btn-principal"
-                >
-
-                    Solicitar información
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
+                <h2>Construye tu futuro con nosotros</h2>
+                <p>Un entorno cálido e inspirador.</p>
+                <a href="#contacto" class="btn-principal">Solicitar información <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-
         </section>
 
-
-
-        <!-- =================================================
-             CONTACTO
-        ================================================== -->
-
-        <section
-            id="contacto"
-            class="seccion fondo-gris"
-        >
-
+        <section id="contacto" class="seccion fondo-gris">
             <div class="contenedor">
-
-
                 <div class="titulo-seccion">
-
-                    <span>
-                        ESTAMOS PARA AYUDARTE
-                    </span>
-
-                    <h2>
-                        Contacto
-                    </h2>
-
+                    <span>ESTAMOS PARA AYUDARTE</span>
+                    <h2>Contacto</h2>
                     <div class="linea"></div>
-
                 </div>
-
-
 
                 <div class="contacto-grid">
-
-
-                    <!-- =================================================
-                         INFORMACIÓN DE CONTACTO
-                    ================================================== -->
-
                     <div class="informacion-contacto">
-
-                        <h3>
-                            Universidad NovaTech del Valle
-                        </h3>
-
-                        <p>
-                            Ponte en contacto con nosotros para recibir
-                            información sobre nuestros programas académicos.
-                        </p>
-
-
-
-                        <div class="dato-contacto">
-
-                            <i class="fa-solid fa-location-dot"></i>
-
-                            <div>
-
-                                <strong>
-                                    Dirección
-                                </strong>
-
-                                <span>
-                                    Av. Universidad 250,
-                                    Ciudad del Valle, México.
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="dato-contacto">
-
-                            <i class="fa-solid fa-phone"></i>
-
-                            <div>
-
-                                <strong>
-                                    Teléfono
-                                </strong>
-
-                                <span>
-                                    777 000 2026
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="dato-contacto">
-
-                            <i class="fa-solid fa-envelope"></i>
-
-                            <div>
-
-                                <strong>
-                                    Correo
-                                </strong>
-
-                                <span>
-                                    contacto@unova.edu.mx
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="dato-contacto">
-
-                            <i class="fa-solid fa-clock"></i>
-
-                            <div>
-
-                                <strong>
-                                    Horario
-                                </strong>
-
-                                <span>
-                                    Lunes a viernes · 8:00 a 18:00
-                                </span>
-
-                            </div>
-
-                        </div>
-
+                        <h3>Universidad NovaTech del Valle</h3>
+                        <p>Ponte en contacto con nosotros.</p>
+                        <div class="dato-contacto"><i class="fa-solid fa-location-dot"></i><div><strong>Dirección</strong><span>Av. Universidad 250</span></div></div>
+                        <div class="dato-contacto"><i class="fa-solid fa-phone"></i><div><strong>Teléfono</strong><span>777 000 2026</span></div></div>
                     </div>
-
-
-
-                    <!-- =================================================
-                         FORMULARIO
-                    ================================================== -->
 
                     <div class="formulario">
-
-                        <h3>
-                            Solicita información
-                        </h3>
-
-
+                        <h3>Solicita información</h3>
                         <form id="formContacto">
-
-
-                            <div class="campo">
-
-                                <label for="nombre">
-                                    Nombre completo
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="nombre"
-                                    placeholder="Escribe tu nombre"
-                                >
-
-                            </div>
-
-
-
-                            <div class="campo">
-
-                                <label for="correo">
-                                    Correo electrónico
-                                </label>
-
-                                <input
-                                    type="email"
-                                    id="correo"
-                                    placeholder="correo@ejemplo.com"
-                                >
-
-                            </div>
-
-
-
-                            <div class="campo">
-
-                                <label for="asunto">
-                                    Asunto
-                                </label>
-
-                                <select id="asunto">
-
-                                    <option value="">
-                                        Selecciona una opción
-                                    </option>
-
-                                    <option value="admisiones">
-                                        Admisiones
-                                    </option>
-
-                                    <option value="programas">
-                                        Programas académicos
-                                    </option>
-
-                                    <option value="becas">
-                                        Becas
-                                    </option>
-
-                                    <option value="informacion">
-                                        Información general
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-
-
-                            <div class="campo">
-
-                                <label for="mensaje">
-                                    Mensaje
-                                </label>
-
-                                <textarea
-                                    id="mensaje"
-                                    rows="5"
-                                    placeholder="Escribe tu mensaje"
-                                ></textarea>
-
-                            </div>
-
-
-
-                            <button
-                                type="submit"
-                                class="btn-formulario"
-                            >
-
-                                Enviar solicitud
-
-                                <i class="fa-solid fa-paper-plane"></i>
-
-                            </button>
-
-
+                            <div class="campo"><label for="nombre">Nombre</label><input type="text" id="nombre" placeholder="Nombre"></div>
+                            <div class="campo"><label for="correo">Correo</label><input type="email" id="correo" placeholder="Correo"></div>
+                            <div class="campo"><label for="asunto">Asunto</label><select id="asunto"><option value="">Selecciona</option><option value="admisiones">Admisiones</option></select></div>
+                            <div class="campo"><label for="mensaje">Mensaje</label><textarea id="mensaje" rows="4" placeholder="Mensaje"></textarea></div>
+                            <button type="submit" class="btn-formulario">Enviar</button>
                         </form>
-
-
                         <div id="mensajeFormulario"></div>
-
                     </div>
-
-
                 </div>
-
             </div>
-
         </section>
-
     </main>
 
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
     <footer>
-
-
-        <div class="contenedor footer-grid">
-
-
-            <!-- =================================================
-                 INFORMACIÓN
-            ================================================== -->
-
-            <div class="footer-info">
-
-
-                <div class="footer-logo">
-
-                    <div class="logo-icono">
-
-                        <i class="fa-solid fa-building-columns"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <h2>
-                            UNOVA
-                        </h2>
-
-                        <span>
-                            Universidad NovaTech del Valle
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <p>
-                    Formando profesionales para transformar
-                    el presente y construir el futuro.
-                </p>
-
-
-            </div>
-
-
-
-            <!-- =================================================
-                 NAVEGACIÓN
-            ================================================== -->
-
-            <div class="footer-enlaces">
-
-                <h3>
-                    Navegación
-                </h3>
-
-                <a href="#inicio">
-                    Inicio
-                </a>
-
-                <a href="#nosotros">
-                    Nosotros
-                </a>
-
-                <a href="#contacto">
-                    Contacto
-                </a>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 INFORMACIÓN
-            ================================================== -->
-
-            <div class="footer-enlaces">
-
-                <h3>
-                    Información
-                </h3>
-
-                <a href="#contacto">
-                    Admisiones
-                </a>
-
-                <a href="#contacto">
-                    Becas
-                </a>
-
-                <a href="#contacto">
-                    Programas académicos
-                </a>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 REDES SOCIALES
-            ================================================== -->
-
-            <div class="footer-redes">
-
-                <h3>
-                    Síguenos
-                </h3>
-
-                <p>
-                    Mantente informado sobre nuestras actividades.
-                </p>
-
-
-                <div class="redes">
-
-
-                    <a
-                        href="#"
-                        aria-label="Facebook"
-                    >
-
-                        <i class="fa-brands fa-facebook-f"></i>
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        aria-label="Instagram"
-                    >
-
-                        <i class="fa-brands fa-instagram"></i>
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        aria-label="X"
-                    >
-
-                        <i class="fa-brands fa-x-twitter"></i>
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        aria-label="YouTube"
-                    >
-
-                        <i class="fa-brands fa-youtube"></i>
-
-                    </a>
-
-
-                </div>
-
-
-            </div>
-
-
+        <div class="contenedor footer-bottom">
+            <p>© 2026 Universidad NovaTech del Valle. Todos los derechos reservados.</p>
         </div>
-
-
-
-        <!-- =================================================
-             COPYRIGHT
-        ================================================== -->
-
-        <div class="footer-bottom">
-
-            <p>
-                © 2026 Universidad NovaTech del Valle.
-                Todos los derechos reservados.
-            </p>
-
-        </div>
-
-
     </footer>
 
-
-
-    <!-- =====================================================
-         JQUERY
-    ====================================================== -->
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-
-    <!-- =====================================================
-         JAVASCRIPT PROPIO
-    ====================================================== -->
-
-    <script src="js/funciones.js"></script>
-
-
+    <!-- JAVASCRIPT DIFERIDO -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="js/funciones.js" defer></script>
 </body>
-
 </html>

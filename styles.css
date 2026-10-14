@@ -1,0 +1,191 @@
+/* =========================================================
+   ESTILOS SECUNDARIOS - STUDIO GHIBLI Y ORGANIGRAMA
+========================================================= */
+.estadisticas{background:var(--green-ghibli);color:white;padding:25px 0}
+.estadisticas-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.estadistica{text-align:center;border-right:1px solid rgba(255,255,255,0.2)}
+.estadistica:last-child{border:none}
+.estadistica i{font-size:22px;color:#f7d58b;margin-bottom:5px}
+.estadistica strong{font-size:28px}
+.estadistica span{font-size:12px;opacity:0.9}
+
+.seccion{padding:70px 0}
+.fondo-gris,.fondo-suave{background:#f4efe6}
+.titulo-seccion{text-align:center;margin-bottom:40px}
+.titulo-seccion > span{color:var(--terracotta);font-size:11px;font-weight:700;letter-spacing:2px}
+.titulo-seccion h2{font-size:32px;color:var(--wood-dark)}
+.linea{width:50px;height:3px;background:var(--green-ghibli);margin:10px auto;border-radius:2px}
+.margin-top-seccion{margin-top:60px}
+.historia-titulo{margin-top:60px}
+
+.mision-vision-contenedor{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.mision-vision-contenedor .tarjeta-info{flex:1;background:var(--card-bg);padding:30px 20px;border-radius:var(--border-soft);text-align:center;border:1px solid var(--border-soft)}
+.tarjeta-info i{width:55px;height:55px;margin:0 auto 12px;border-radius:50%;background:var(--green-light);color:var(--green-ghibli);display:flex;align-items:center;justify-content:center;font-size:22px}
+.tarjeta-info h3{font-size:20px;color:var(--wood-dark);margin-bottom:10px}
+.tarjeta-info p{color:#626c66;font-size:13px}
+
+.imagen-central-ghibli{width:150px;height:150px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.circulo-decorativo{width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,var(--sky-blue),var(--green-ghibli));display:flex;align-items:center;justify-content:center;color:white;font-size:50px;border:3px solid white}
+
+.valores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.valor{background:white;border-radius:12px;padding:25px 15px;text-align:center;border:1px solid var(--border-soft)}
+.valor-icono{width:50px;height:50px;margin:0 auto 12px;border-radius:50%;background:#fdf3ee;color:var(--terracotta);display:flex;align-items:center;justify-content:center;font-size:20px}
+.valor h3{font-size:16px;color:var(--wood-dark);margin-bottom:6px}
+.valor p{font-size:12px;color:#626c66}
+
+.timeline{margin-top:30px}
+.timeline-item{display:grid;grid-template-columns:240px 1fr;gap:25px;margin-bottom:30px;align-items:center}
+.timeline-imagen img{width:100%;height:160px;object-fit:cover;border-radius:12px}
+.timeline-info h3{font-size:20px;color:var(--green-ghibli);margin-bottom:6px}
+
+/* =========================================================
+   ESTILOS DE ORGANIGRAMA ESTILO FOTOS
+========================================================= */
+.organigrama-seccion-integrada {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 2px dashed var(--border-soft);
+}
+
+.organigrama-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.nodo-organigrama {
+    background: #23272a;
+    border: 2px solid #f39c12;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 280px;
+    max-width: 330px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    position: relative;
+    border-right: 4px solid #f39c12;
+}
+
+.avatar-espacio {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #2f3136;
+    border: 2px dashed #f39c12;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.avatar-espacio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nodo-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+}
+
+.header-tarjeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.etiqueta-correo {
+    font-size: 9px;
+    font-weight: 800;
+    color: #f39c12;
+    letter-spacing: 0.5px;
+}
+
+.nodo-info .correo {
+    font-size: 11px;
+    color: #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+.nodo-info h4 {
+    font-size: 15px;
+    color: #ffffff;
+    margin-top: 4px;
+    font-weight: 700;
+}
+
+.nodo-info .puesto {
+    display: block;
+    font-size: 11px;
+    color: #f39c12;
+    font-weight: 600;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.linea-vertical {
+    width: 2px;
+    height: 30px;
+    background: #f39c12;
+}
+
+.organigrama-nivel.nivel-sub {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.rama {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta{background:linear-gradient(135deg,var(--wood-dark),var(--green-ghibli));color:white;text-align:center;padding:60px 20px}
+.cta h2{font-size:30px;margin-bottom:8px}
+
+.contacto-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:40px}
+.formulario{background:white;padding:30px 20px;border-radius:12px}
+.campo{margin-bottom:15px}
+.campo label{display:block;font-size:12px;font-weight:700;margin-bottom:5px}
+.campo input,.campo select,.campo textarea{width:100%;border:1px solid var(--border-soft);border-radius:8px;padding:10px;font-size:12px;outline:none}
+.btn-formulario{width:100%;border:none;background:var(--green-ghibli);color:white;padding:12px;border-radius:18px;font-weight:700;cursor:pointer}
+
+footer{background:var(--wood-dark);color:white}
+.footer-bottom{text-align:center;padding:15px;color:#839489;font-size:11px}
+
+#btnArriba{position:fixed;right:20px;bottom:20px;width:40px;height:40px;border:none;border-radius:50%;background:var(--terracotta);color:white;cursor:pointer;display:none;z-index:900}
+
+.slider{position:absolute;inset:0}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease}
+.slide.activo{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover}
+
+@media(max-width:900px){
+    .mision-vision-contenedor{flex-direction:column}
+    .valores-grid{grid-template-columns:repeat(2,1fr)}
+    .contacto-grid{grid-template-columns:1fr}
+    .organigrama-nivel.nivel-sub{flex-direction:column;align-items:center}
+}
+@media(max-width:550px){
+    .valores-grid{grid-template-columns:1fr}
+    .estadisticas-grid{grid-template-columns:repeat(2,1fr);gap:15px}
+}
