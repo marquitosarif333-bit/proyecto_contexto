@@ -225,3 +225,72 @@ setInterval(function(){
     }
     slides.eq(indiceSlide).addClass("activo");
 }, 3000);
+$(document).ready(function () {
+
+    /* PRELOADER */
+    $("#preloader").fadeOut(600);
+
+    /* MENÚ RESPONSIVE MÓVIL */
+    $("#btnMenu").click(function () {
+        $("#menu").toggleClass("mostrar");
+        $(this).find("i").toggleClass("fa-bars fa-xmark");
+    });
+
+    /* NAVEGACIÓN ENTRE VISTAS DINÁMICAS */
+    $(".enlace-menu").click(function (e) {
+        let destino = $(this).attr("href");
+
+        if (destino && destino.startsWith("#")) {
+            e.preventDefault();
+
+            // Cerrar menú móvil si está abierto
+            $("#menu").removeClass("mostrar");
+            $("#btnMenu i").removeClass("fa-xmark").addClass("fa-bars");
+
+            // Actualizar estilo de enlace activo
+            $(".enlace-menu").removeClass("activo");
+            $('.enlace-menu[href="' + destino + '"]').addClass("activo");
+
+            // Ocultar todas las vistas y mostrar únicamente la seleccionada
+            $(".vista-pagina").removeClass("activa");
+
+            if (destino === "#inicio") {
+                $("#vista-inicio").addClass("activa");
+            } else if (destino === "#nosotros") {
+                $("#vista-nosotros").addClass("activa");
+            } else if (destino === "#menu-seccion") {
+                $("#vista-menu").addClass("activa");
+            } else if (destino === "#contacto") {
+                $("#vista-contacto").addClass("activa");
+            }
+
+            // Scroll suave hacia arriba de la nueva vista
+            $("html, body").animate({ scrollTop: 0 }, 400);
+        }
+    });
+
+    /* BOTÓN SUBIR AL INICIO */
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $("#btnArriba").fadeIn(300);
+        } else {
+            $("#btnArriba").fadeOut(300);
+        }
+    });
+
+    $("#btnArriba").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 500);
+    });
+
+    /* FORMULARIO DE CONTACTO */
+    $("#formContacto").submit(function (e) {
+        e.preventDefault();
+        let nombre = $.trim($("#nombre").val());
+        if (nombre === "") {
+            alert("Por favor escribe tu nombre.");
+            return;
+        }
+        alert("¡Solicitud enviada correctamente!");
+        this.reset();
+    });
+});
