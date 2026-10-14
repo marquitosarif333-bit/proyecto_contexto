@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad NovaTech del Valle | Nosotros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body style="text-align: center;">
+    <header id="header">
+        <div class="contenedor-header" style="max-width:1250px; margin:auto; display:flex; align-items:center; justify-content:space-between; height:75px;">
+            <button id="btnMenu" type="button" aria-label="Abrir menú" style="display:none;"><i class="fa-solid fa-bars"></i></button>
+            <div class="logo" style="display:flex; align-items:center; gap:10px;">
+                <div class="logo-icono"><i class="fa-solid fa-tree"></i></div>
+                <div class="logo-texto" style="text-align:left;">
+                    <h1>UNOVA</h1>
+                    <span>Universidad NovaTech del Valle</span>
+                </div>
+            </div>
+            <nav id="menu">
+                <a href="index.html" class="enlace-menu">Inicio</a>
+                <a href="nosotros.html" class="enlace-menu activo">Nosotros</a>
+                <a href="menu.html" class="enlace-menu">Menú</a>
+                <a href="contacto.html" class="enlace-menu boton-contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="margin-top: 100px;">
+        <section class="seccion">
+            <div class="contenedor" style="max-width:1200px; margin:auto;">
+                <div class="titulo-seccion">
+                    <span>CONÓCENOS</span>
+                    <h2>Nuestra Identidad</h2>
+                    <div class="linea"></div>
+                </div>
+
+                <div class="mision-vision-contenedor" style="display:flex; justify-content:center; gap:25px; flex-wrap:wrap;">
+                    <div class="tarjeta-info tarjeta-mision" style="flex:1; min-width:280px;">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <h3>Misión</h3>
+                        <p>Formar profesionales íntegros, competitivos y comprometidos mediante un modelo educativo innovador.</p>
+                    </div>
+                    <div class="tarjeta-info tarjeta-vision" style="flex:1; min-width:280px;">
+                        <i class="fa-solid fa-eye"></i>
+                        <h3>Visión</h3>
+                        <p>Ser reconocidos como una institución líder en educación superior por nuestra excelencia e impacto.</p>
+                    </div>
+                </div>
+
+                <!-- ORGANIGRAMA INTEGRADO AL FINAL DE NOSOTROS -->
+                <div id="organigrama" class="organigrama-seccion-integrada" style="margin-top:60px;">
+                    <div class="titulo-seccion">
+                        <span>ESTRUCTURA INSTITUCIONAL</span>
+                        <h2>Organigrama</h2>
+                        <div class="linea"></div>
+                    </div>
+
+                    <div class="organigrama-tree">
+                        <!-- Nivel 1 -->
+                        <div class="organigrama-nivel nivel-root">
+                            <div class="nodo-organigrama">
+                                <div class="avatar-espacio"><img src="img/roman.jpg" alt="Román"></div>
+                                <div class="nodo-info" style="text-align:left;">
+                                    <div class="header-tarjeta"><span class="etiqueta-correo">CORREO</span><a href="mailto:roman@unova.edu.mx" class="correo">roman@unova.edu.mx</a></div>
+                                    <h4>Román Gutiérrez</h4>
+                                    <span class="puesto">Puesto: Director General / Rector</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="linea-vertical"></div>
+                        <!-- Nivel 2 -->
+                        <div class="organigrama-nivel nivel-sub">
+                            <div class="rama"><div class="nodo-organigrama"><div class="avatar-espacio"><img src="img/nicolas.jpg" alt="Nicolas"></div><div class="nodo-info" style="text-align:left;"><div class="header-tarjeta"><span class="etiqueta-correo">CORREO</span><a href="mailto:nicolas@unova.edu.mx" class="correo">nicolas@unova.edu.mx</a></div><h4>Nicolas Giles</h4><span class="puesto">Puesto: Subdirector General</span></div></div></div>
+                            <div class="rama"><div class="nodo-organigrama"><div class="avatar-espacio"><img src="img/marcos.jpg" alt="Marcos"></div><div class="nodo-info" style="text-align:left;"><div class="header-tarjeta"><span class="etiqueta-correo">CORREO</span><a href="mailto:marcos@unova.edu.mx" class="correo">marcos@unova.edu.mx</a></div><h4>Marcos Arif</h4><span class="puesto">Puesto: Gerente de Operaciones</span></div></div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="redes-sociales" style="display:flex; justify-content:center; gap:20px; margin-bottom:15px;">
+            <a href="#" aria-label="Facebook" style="color:white; font-size:20px;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" style="color:white; font-size:20px;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter" style="color:white; font-size:20px;"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" style="color:white; font-size:20px;"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div class="footer-bottom" style="color:#839489; font-size:11px;">
+            <p>© 2026 Universidad NovaTech del Valle. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/funciones.js"></script>
+</body>
+</html>
