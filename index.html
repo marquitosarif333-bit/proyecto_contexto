@@ -31,6 +31,15 @@
         .enlace-menu:hover,.enlace-menu.activo{color:var(--green-ghibli);background:var(--green-light)}
         .boton-contacto{background:var(--terracotta);color:white!important}
         #btnMenu{display:none;border:none;background:none;font-size:24px;color:var(--wood-dark);cursor:pointer}
+        
+        /* ESTILOS DEL MENÚ RESPONSIVE (MÓVIL) */
+        @media(max-width:800px){
+            #btnMenu{display:flex}
+            nav{position:absolute;top:75px;left:0;width:100%;background:rgba(252,248,242,0.98);flex-direction:column;align-items:center;padding:20px 0;border-bottom:2px solid var(--border-soft);display:none;box-shadow:0 10px 15px rgba(0,0,0,0.05)}
+            nav.mostrar{display:flex}
+            nav .enlace-menu{width:80%;text-align:center;margin:5px 0}
+        }
+
         .hero{height:620px;margin-top:75px;position:relative;display:flex;align-items:center;overflow:hidden;background:linear-gradient(90deg,rgba(44,62,53,0.85),rgba(74,124,89,0.5))}
         .hero-contenido{width:90%;max-width:1200px;margin:auto;position:relative;z-index:2;color:white}
         .etiqueta{display:inline-block;background:rgba(255,255,255,0.2);padding:5px 12px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:15px}
@@ -44,15 +53,13 @@
         #preloader{position:fixed;inset:0;background:var(--wood-dark);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
         .loader{width:40px;height:40px;border:3px solid rgba(255,255,255,0.2);border-top-color:var(--terracotta);border-radius:50%;animation:girar 0.8s linear infinite}
         @keyframes girar{to{transform:rotate(360deg)}}
-        @media(max-width:800px){#btnMenu{display:flex}nav{display:none}}
     </style>
 
     <!-- CARGA DIFERIDA DE ESTILOS SECUNDARIOS -->
-    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
+    <link rel="stylesheet" href="css/styles.css">
 
     <!-- FONT AWESOME ASÍNCRONO -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -80,6 +87,7 @@
                 </div>
             </div>
 
+            <!-- MENÚ PRINCIPAL Y RESPONSIVE CON INICIO, NOSOTROS Y CONTACTO -->
             <nav id="menu">
                 <a href="#inicio" class="enlace-menu activo">Inicio</a>
                 <a href="#nosotros" class="enlace-menu">Nosotros</a>
@@ -93,15 +101,15 @@
             <div class="slider">
                 <div class="slide activo">
                     <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=60" 
-                         width="800" height="450" fetchpriority="high" decoding="async" alt="Campus estilo Ghibli">
+                         width="800" height="450" alt="Campus estilo Ghibli">
                 </div>
                 <div class="slide">
                     <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=60" 
-                         width="800" height="450" loading="lazy" decoding="async" alt="Instalaciones">
+                         width="800" height="450" alt="Instalaciones">
                 </div>
                 <div class="slide">
                     <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=60" 
-                         width="800" height="450" loading="lazy" decoding="async" alt="Estudiantes">
+                         width="800" height="450" alt="Estudiantes">
                 </div>
             </div>
 
@@ -204,20 +212,20 @@
 
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-imagen"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=50" width="400" height="240" loading="lazy" decoding="async" alt="Fundación"></div>
+                        <div class="timeline-imagen"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=50" width="400" height="240" alt="Fundación"></div>
                         <div class="timeline-info"><h3>1995 - 1996</h3><p>Fundación de la universidad.</p></div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-imagen"><img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=50" width="400" height="240" loading="lazy" decoding="async" alt="Expansión"></div>
+                        <div class="timeline-imagen"><img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=50" width="400" height="240" alt="Expansión"></div>
                         <div class="timeline-info"><h3>2005</h3><p>Expansión del campus.</p></div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-imagen"><img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=400&q=50" width="400" height="240" loading="lazy" decoding="async" alt="Actualidad"></div>
+                        <div class="timeline-imagen"><img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=400&q=50" width="400" height="240" alt="Actualidad"></div>
                         <div class="timeline-info"><h3>2026</h3><p>Modernización tecnológica.</p></div>
                     </div>
                 </div>
 
-                <!-- ORGANIGRAMA AGREGADO AL FINAL DE LA SECCIÓN NOSOTROS -->
+                <!-- ORGANIGRAMA INTEGRADO AL FINAL DE LA SECCIÓN NOSOTROS (CON ESPACIOS DE IMAGEN LISTOS) -->
                 <div id="organigrama" class="organigrama-seccion-integrada">
                     <div class="titulo-seccion">
                         <span>ESTRUCTURA INSTITUCIONAL</span>
@@ -227,34 +235,36 @@
                     </div>
 
                     <div class="organigrama-tree">
-                        <!-- Nivel 1: Román Gutiérrez -->
+                        <!-- Nivel 1 -->
                         <div class="organigrama-nivel nivel-root">
                             <div class="nodo-organigrama">
                                 <div class="avatar-espacio">
-                                    <!-- AQUÍ COLOCAS TU IMAGEN -->
+                                    <img src="img/roman.jpg" alt="Román Gutiérrez">
                                 </div>
                                 <div class="nodo-info">
                                     <div class="header-tarjeta">
                                         <span class="etiqueta-correo">CORREO</span>
-                                        <a href="mailto:roman@eatvikings.com" class="correo">roman@eatvikings.com</a>
+                                        <a href="mailto:roman@unova.edu.mx" class="correo">roman@unova.edu.mx</a>
                                     </div>
                                     <h4>Román Gutiérrez</h4>
-                                    <span class="puesto">Puesto: Director General / Rey Valhalla</span>
+                                    <span class="puesto">Puesto: Director General / Rector</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="linea-vertical"></div>
 
-                        <!-- Nivel 2: Nicolás Giles & Marcos Arif -->
+                        <!-- Nivel 2 -->
                         <div class="organigrama-nivel nivel-sub">
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/nicolas.jpg" alt="Nicolas Giles">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:nicolas@eatvikings.com" class="correo">nicolas@eatvikings.com</a>
+                                            <a href="mailto:nicolas@unova.edu.mx" class="correo">nicolas@unova.edu.mx</a>
                                         </div>
                                         <h4>Nicolas Giles</h4>
                                         <span class="puesto">Puesto: Subdirector General</span>
@@ -263,11 +273,13 @@
                             </div>
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/marcos.jpg" alt="Marcos Arif">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:marcos@eatvikings.com" class="correo">marcos@eatvikings.com</a>
+                                            <a href="mailto:marcos@unova.edu.mx" class="correo">marcos@unova.edu.mx</a>
                                         </div>
                                         <h4>Marcos Arif</h4>
                                         <span class="puesto">Puesto: Gerente de Operaciones</span>
@@ -278,15 +290,17 @@
 
                         <div class="linea-vertical"></div>
 
-                        <!-- Nivel 3: Estefania, Juan, Eder -->
+                        <!-- Nivel 3 -->
                         <div class="organigrama-nivel nivel-sub">
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/estefania.jpg" alt="Estefania Asseneth">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:estefania@eatvikings.com" class="correo">estefania@eatvikings.com</a>
+                                            <a href="mailto:estefania@unova.edu.mx" class="correo">estefania@unova.edu.mx</a>
                                         </div>
                                         <h4>Estefania Asseneth</h4>
                                         <span class="puesto">Puesto: Recursos Humanos</span>
@@ -295,11 +309,13 @@
                             </div>
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/juan.jpg" alt="Juan Ocampo">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:juan@eatvikings.com" class="correo">juan@eatvikings.com</a>
+                                            <a href="mailto:juan@unova.edu.mx" class="correo">juan@unova.edu.mx</a>
                                         </div>
                                         <h4>Juan Ocampo</h4>
                                         <span class="puesto">Puesto: Jefe de Marketing</span>
@@ -308,11 +324,13 @@
                             </div>
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/eder.jpg" alt="Eder">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:eder@eatvikings.com" class="correo">eder@eatvikings.com</a>
+                                            <a href="mailto:eder@unova.edu.mx" class="correo">eder@unova.edu.mx</a>
                                         </div>
                                         <h4>Eder</h4>
                                         <span class="puesto">Puesto: Coordinador de Reservas</span>
@@ -323,15 +341,17 @@
 
                         <div class="linea-vertical" style="height:40px;"></div>
 
-                        <!-- Nivel 4: Enrique Becerril -->
+                        <!-- Nivel 4 -->
                         <div class="organigrama-nivel nivel-sub">
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/enrique.jpg" alt="Enrique Becerril">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:enrique@eatvikings.com" class="correo">enrique@eatvikings.com</a>
+                                            <a href="mailto:enrique@unova.edu.mx" class="correo">enrique@unova.edu.mx</a>
                                         </div>
                                         <h4>Enrique Becerril</h4>
                                         <span class="puesto">Puesto: Chef Ejecutivo</span>
@@ -342,15 +362,17 @@
 
                         <div class="linea-vertical"></div>
 
-                        <!-- Nivel 5: Eros, Eduardo, Luis -->
+                        <!-- Nivel 5 -->
                         <div class="organigrama-nivel nivel-sub">
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/eros.jpg" alt="Eros Ramses">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:eros@eatvikings.com" class="correo">eros@eatvikings.com</a>
+                                            <a href="mailto:eros@unova.edu.mx" class="correo">eros@unova.edu.mx</a>
                                         </div>
                                         <h4>Eros Ramses</h4>
                                         <span class="puesto">Puesto: Supervisor de Calidad</span>
@@ -359,11 +381,13 @@
                             </div>
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/eduardo.jpg" alt="Eduardo Garcia">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:eduardo@eatvikings.com" class="correo">eduardo@eatvikings.com</a>
+                                            <a href="mailto:eduardo@unova.edu.mx" class="correo">eduardo@unova.edu.mx</a>
                                         </div>
                                         <h4>Eduardo Garcia</h4>
                                         <span class="puesto">Puesto: Sommelier de Hidromiel</span>
@@ -372,11 +396,13 @@
                             </div>
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/luis.jpg" alt="Luis Joaquin">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:luis@eatvikings.com" class="correo">luis@eatvikings.com</a>
+                                            <a href="mailto:luis@unova.edu.mx" class="correo">luis@unova.edu.mx</a>
                                         </div>
                                         <h4>Luis Joaquin</h4>
                                         <span class="puesto">Puesto: Maestro Parrillero</span>
@@ -387,15 +413,17 @@
 
                         <div class="linea-vertical"></div>
 
-                        <!-- Nivel 6: Carmen, Ismael, Angel -->
+                        <!-- Nivel 6 -->
                         <div class="organigrama-nivel nivel-sub">
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/carmen.jpg" alt="Carmen Barajas">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:carmen@eatvikings.com" class="correo">carmen@eatvikings.com</a>
+                                            <a href="mailto:carmen@unova.edu.mx" class="correo">carmen@unova.edu.mx</a>
                                         </div>
                                         <h4>Carmen Barajas</h4>
                                         <span class="puesto">Puesto: Jefa de Finanzas</span>
@@ -404,11 +432,13 @@
                             </div>
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/ismael.jpg" alt="Ismael Flores">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:ismael@eatvikings.com" class="correo">ismael@eatvikings.com</a>
+                                            <a href="mailto:ismael@unova.edu.mx" class="correo">ismael@unova.edu.mx</a>
                                         </div>
                                         <h4>Ismael Flores</h4>
                                         <span class="puesto">Puesto: Diseñador Temático</span>
@@ -417,11 +447,13 @@
                             </div>
                             <div class="rama">
                                 <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"></div>
+                                    <div class="avatar-espacio">
+                                        <img src="img/angel.jpg" alt="Angel">
+                                    </div>
                                     <div class="nodo-info">
                                         <div class="header-tarjeta">
                                             <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:angel@eatvikings.com" class="correo">angel@eatvikings.com</a>
+                                            <a href="mailto:angel@unova.edu.mx" class="correo">angel@unova.edu.mx</a>
                                         </div>
                                         <h4>Angel</h4>
                                         <span class="puesto">Puesto: Encargado de Compras</span>
@@ -482,8 +514,8 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT DIFERIDO -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
-    <script src="js/funciones.js" defer></script>
+    <!-- JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/funciones.js"></script>
 </body>
 </html>

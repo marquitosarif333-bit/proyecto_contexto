@@ -1,4 +1,4 @@
-//Uso de JQuery
+// Uso de JQuery
 $(document).ready(function () {
 
     /* =====================================================

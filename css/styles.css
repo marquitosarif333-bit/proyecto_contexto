@@ -39,7 +39,7 @@
 .timeline-info h3{font-size:20px;color:var(--green-ghibli);margin-bottom:6px}
 
 /* =========================================================
-   ESTILOS DE ORGANIGRAMA ESTILO FOTOS
+   ORGANIGRAMA CON ESTILO Y COLORES DE LA PÁGINA (GHIBLI)
 ========================================================= */
 .organigrama-seccion-integrada {
     margin-top: 80px;
@@ -58,26 +58,26 @@
 }
 
 .nodo-organigrama {
-    background: #23272a;
-    border: 2px solid #f39c12;
+    background: #ffffff;
+    border: 2px solid var(--green-ghibli);
     border-radius: 12px;
-    padding: 12px 16px;
+    padding: 14px 18px;
     display: flex;
     align-items: center;
     gap: 12px;
     min-width: 280px;
-    max-width: 330px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    max-width: 340px;
+    box-shadow: 0 4px 12px rgba(44, 62, 53, 0.08);
     position: relative;
-    border-right: 4px solid #f39c12;
+    border-right: 4px solid var(--terracotta);
 }
 
 .avatar-espacio {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: #2f3136;
-    border: 2px dashed #f39c12;
+    background: var(--green-light);
+    border: 2px dashed var(--green-ghibli);
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -108,13 +108,13 @@
 .etiqueta-correo {
     font-size: 9px;
     font-weight: 800;
-    color: #f39c12;
+    color: var(--terracotta);
     letter-spacing: 0.5px;
 }
 
 .nodo-info .correo {
     font-size: 11px;
-    color: #ffffff;
+    color: #626c66;
     text-decoration: none;
     white-space: nowrap;
     overflow: hidden;
@@ -122,9 +122,13 @@
     font-weight: 500;
 }
 
+.nodo-info .correo:hover {
+    color: var(--green-ghibli);
+}
+
 .nodo-info h4 {
     font-size: 15px;
-    color: #ffffff;
+    color: var(--wood-dark);
     margin-top: 4px;
     font-weight: 700;
 }
@@ -132,7 +136,7 @@
 .nodo-info .puesto {
     display: block;
     font-size: 11px;
-    color: #f39c12;
+    color: var(--green-ghibli);
     font-weight: 600;
     margin-top: 2px;
     white-space: nowrap;
@@ -143,7 +147,7 @@
 .linea-vertical {
     width: 2px;
     height: 30px;
-    background: #f39c12;
+    background: var(--green-ghibli);
 }
 
 .organigrama-nivel.nivel-sub {
