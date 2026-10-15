@@ -3,303 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universidad NovaTech del Valle | UNOVA</title>
-
-    <!-- PRECONEXIÓN RÁPIDA -->
+    <title>Universidad NovaTech del Valle | Nosotros</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- HOJA DE ESTILOS -->
     <link rel="stylesheet" href="css/styles.css">
-
-    <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        @media(max-width: 800px) {
+            .contenedor-header { justify-content: flex-start !important; gap: 15px !important; }
+            #btnMenu { display: flex !important; order: 1; }
+            .logo { order: 2; }
+            nav {
+                position: absolute; top: 75px; left: 0; width: 100%;
+                background: rgba(252,248,242,0.98); flex-direction: column;
+                align-items: center; padding: 20px 0; border-bottom: 2px solid var(--border-soft);
+                display: none; box-shadow: 0 10px 15px rgba(0,0,0,0.05); z-index: 1000;
+            }
+            nav.mostrar { display: flex !important; }
+            nav .enlace-menu { width: 80%; text-align: center; margin: 5px 0; }
+        }
+    </style>
 </head>
-
-<body>
-
-    <div id="preloader">
-        <div class="loader"></div>
-        <p>Cargando UNOVA...</p>
-    </div>
-
-    <button id="btnArriba" type="button" aria-label="Volver al inicio">
-        <i class="fa-solid fa-cloud-arrow-up"></i>
-    </button>
-
-    <!-- HEADER / NAVEGACIÓN PRINCIPAL -->
+<body style="text-align: center;">
     <header id="header">
-        <div class="contenedor-header">
-            <button id="btnMenu" type="button" aria-label="Abrir menú de navegación">
+        <div class="contenedor-header" style="max-width:1250px; margin:auto; display:flex; align-items:center; justify-content:space-between; height:75px;">
+            <button id="btnMenu" type="button" aria-label="Abrir menú" style="display:none; border:none; background:none; font-size:24px; color:#1b2822; cursor:pointer;">
                 <i class="fa-solid fa-bars"></i>
             </button>
-
-            <div class="logo">
-                <div class="logo-icono"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
-                <div class="logo-texto">
+            <div class="logo" style="display:flex; align-items:center; gap:10px;">
+                <div class="logo-icono"><i class="fa-solid fa-tree"></i></div>
+                <div class="logo-texto" style="text-align:left;">
                     <h1>UNOVA</h1>
-                    <span class="subtitulo-logo">Universidad NovaTech del Valle</span>
+                    <span>Universidad NovaTech del Valle</span>
                 </div>
             </div>
-
-            <nav id="menu" aria-label="Menú principal">
-                <a href="#inicio" class="enlace-menu activo">Inicio</a>
-                <a href="#nosotros" class="enlace-menu">Nosotros</a>
-                <a href="#menu-seccion" class="enlace-menu">Menú</a>
-                <a href="#contacto" class="enlace-menu boton-contacto">Contacto</a>
+            <nav id="menu">
+                <a href="index.html" class="enlace-menu">Inicio</a>
+                <a href="nosotros.html" class="enlace-menu activo">Nosotros</a>
+                <a href="menu.html" class="enlace-menu">Menú</a>
+                <a href="contacto.html" class="enlace-menu boton-contacto">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- 1. VISTA: INICIO -->
-        <div id="vista-inicio" class="vista-pagina activa">
-            <section class="hero">
-                <div class="slider">
-                    <div class="slide activo">
-                        <img src="img/universidad.jpg" alt="Campus universitario estilo Ghibli con amplias áreas verdes">
+    <main style="margin-top: 100px;">
+        <section class="seccion">
+            <div class="contenedor" style="max-width:1200px; margin:auto;">
+                <div class="titulo-seccion">
+                    <span>CONÓCENOS</span>
+                    <h2>Nuestra Identidad</h2>
+                    <div class="linea"></div>
+                </div>
+
+                <div class="mision-vision-contenedor" style="display:flex; justify-content:center; gap:25px; flex-wrap:wrap;">
+                    <div class="tarjeta-info tarjeta-mision" style="flex:1; min-width:280px; background:white; padding:30px 20px; border-radius:12px; border:1px solid #d3cdbf;">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <h3>Misión</h3>
+                        <p>Formar profesionales íntegros, competitivos y comprometidos mediante un modelo educativo innovador.</p>
+                    </div>
+                    <div class="tarjeta-info tarjeta-vision" style="flex:1; min-width:280px; background:white; padding:30px 20px; border-radius:12px; border:1px solid #d3cdbf;">
+                        <i class="fa-solid fa-eye"></i>
+                        <h3>Visión</h3>
+                        <p>Ser reconocidos como una institución líder en educación superior por nuestra excelencia e impacto.</p>
                     </div>
                 </div>
 
-                <div class="hero-contenido">
-                    <span class="etiqueta">🌱 EDUCACIÓN • INNOVACIÓN • NATURALEZA</span>
-                    <h2>Formando el futuro, <span>transformando el presente.</span></h2>
-                    <p>Una experiencia educativa inspiradora, integrada con la innovación y el desarrollo humano integral.</p>
-                    <div class="hero-botones">
-                        <a href="#nosotros" class="btn-principal enlace-menu">Conócenos</a>
-                        <a href="#contacto" class="btn-secundario enlace-menu">Contacto</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="estadisticas">
-                <div class="contenedor estadisticas-grid">
-                    <div class="estadistica">
-                        <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
-                        <strong class="contador" data-numero="2500">2500+</strong>
-                        <span>Estudiantes</span>
-                    </div>
-                    <div class="estadistica">
-                        <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
-                        <strong class="contador" data-numero="180">180+</strong>
-                        <span>Docentes</span>
-                    </div>
-                    <div class="estadistica">
-                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
-                        <strong class="contador" data-numero="25">25+</strong>
-                        <span>Programas</span>
-                    </div>
-                    <div class="estadistica">
-                        <i class="fa-solid fa-award" aria-hidden="true"></i>
-                        <strong class="contador" data-numero="15">15+</strong>
-                        <span>Años de Magia</span>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- 2. VISTA: NOSOTROS (HISTORIA Y ORGANIGRAMA) -->
-        <div id="vista-nosotros" class="vista-pagina">
-            <section class="seccion">
-                <div class="contenedor">
+                <!-- ORGANIGRAMA EXACTAMENTE CON 14 INTEGRANTES -->
+                <div id="organigrama" class="organigrama-seccion-integrada" style="margin-top:60px;">
                     <div class="titulo-seccion">
-                        <span class="etiqueta-seccion">CONÓCENOS</span>
-                        <h2>Nuestra Identidad</h2>
+                        <span>ESTRUCTURA INSTITUCIONAL</span>
+                        <h2>Organigrama Directivo (14 Integrantes)</h2>
                         <div class="linea"></div>
                     </div>
 
-                    <div class="mision-vision-contenedor">
-                        <div class="tarjeta-info tarjeta-mision">
-                            <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
-                            <h3>Misión</h3>
-                            <p>Formar profesionales íntegros, competitivos y comprometidos mediante un modelo educativo innovador.</p>
-                        </div>
-
-                        <div class="imagen-central-ghibli">
-                            <div class="circulo-decorativo"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div>
-                        </div>
-
-                        <div class="tarjeta-info tarjeta-vision">
-                            <i class="fa-solid fa-eye" aria-hidden="true"></i>
-                            <h3>Visión</h3>
-                            <p>Ser reconocidos como una institución líder en educación superior por nuestra excelencia e impacto.</p>
-                        </div>
-                    </div>
-
-                    <div class="titulo-seccion margin-top-seccion">
-                        <span class="etiqueta-seccion">PRINCIPIOS</span>
-                        <h2>Valores</h2>
-                        <div class="linea"></div>
-                    </div>
-
-                    <div class="valores-grid">
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
-                            <h3>Integridad</h3>
-                            <p>Honestidad y transparencia.</p>
-                        </div>
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
-                            <h3>Excelencia</h3>
-                            <p>Crecimiento continuo.</p>
-                        </div>
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
-                            <h3>Innovación</h3>
-                            <p>Nuevas ideas para transformar.</p>
-                        </div>
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
-                            <h3>Respeto</h3>
-                            <p>Dignidad humana.</p>
-                        </div>
-                    </div>
-
-                    <!-- ORGANIGRAMA INTEGRADO -->
-                    <div id="organigrama" class="organigrama-seccion-integrada">
-                        <div class="titulo-seccion">
-                            <span class="etiqueta-seccion">ESTRUCTURA INSTITUCIONAL</span>
-                            <h2>Organigrama</h2>
-                            <div class="linea"></div>
-                            <p class="subtitulo-org">Estructura de mando de los integrantes del equipo directivo y académico.</p>
-                        </div>
-
-                        <div class="organigrama-tree">
-                            <!-- Nivel 1 -->
-                            <div class="organigrama-nivel nivel-root">
-                                <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"><img src="img/marcos.jpeg" alt="Fotografía de Marcos Arif Hernandez Ostos"></div>
-                                    <div class="nodo-info">
-                                        <div class="header-tarjeta">
-                                            <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:marcos@unova.edu.mx" class="correo">marcos@unova.edu.mx</a>
-                                        </div>
-                                        <h3>Marcos Arif Hernandez Ostos</h3>
-                                        <span class="puesto">Puesto: Director General / Rector</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="linea-vertical"></div>
-
-                            <!-- Nivel 2 -->
-                            <div class="organigrama-nivel nivel-sub">
-                                <div class="rama">
-                                    <div class="nodo-organigrama">
-                                        <div class="avatar-espacio"><img src="img/nick.jpeg" alt="Fotografía de Nicolas Giles"></div>
-                                        <div class="nodo-info">
-                                            <div class="header-tarjeta">
-                                                <span class="etiqueta-correo">CORREO</span>
-                                                <a href="mailto:nicolas@unova.edu.mx" class="correo">nicolas@unova.edu.mx</a>
-                                            </div>
-                                            <h3>Nicolas Giles</h3>
-                                            <span class="puesto">Puesto: Subdirector General</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="rama">
-                                    <div class="nodo-organigrama">
-                                        <div class="avatar-espacio"><img src="img/roman.jpeg" alt="Fotografía de Román Gutiérrez"></div>
-                                        <div class="nodo-info">
-                                            <div class="header-tarjeta">
-                                                <span class="etiqueta-correo">CORREO</span>
-                                                <a href="mailto:roman@unova.edu.mx" class="correo">roman@unova.edu.mx</a>
-                                            </div>
-                                            <h3>Román Gutiérrez</h3>
-                                            <span class="puesto">Puesto: Gerente de Operaciones</span>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="organigrama-tree" style="display:flex; flex-direction:column; align-items:center; gap:20px;">
+                        
+                        <!-- Nivel 1 (1 persona) -->
+                        <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:14px 18px; display:flex; align-items:center; gap:14px; width:320px; border-right:5px solid #9b3e22;">
+                            <div class="avatar-espacio" style="width:50px; height:50px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/roman.jpg" alt="Román" style="width:100%; height:100%; object-fit:cover;"></div>
+                            <div class="nodo-info" style="text-align:left;">
+                                <div class="header-tarjeta"><span class="etiqueta-correo" style="font-size:10px; color:#9b3e22; font-weight:800;">CORREO</span><a href="mailto:roman@unova.edu.mx" class="correo" style="font-size:11px; color:#222;">roman@unova.edu.mx</a></div>
+                                <h4 style="font-size:14px; color:#1b2822;">Román Gutiérrez</h4>
+                                <span class="puesto" style="font-size:11px; color:#2c5339; font-weight:700;">Director General / Rector</span>
                             </div>
                         </div>
+
+                        <div class="linea-vertical" style="width:2px; height:20px; background:#2c5339;"></div>
+
+                        <!-- Nivel 2 (3 personas) -->
+                        <div style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:12px; display:flex; align-items:center; gap:10px; width:280px; border-right:5px solid #9b3e22;"><div class="avatar-espacio" style="width:45px; height:45px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/nicolas.jpg" alt="Nicolas" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><span class="etiqueta-correo" style="font-size:9px; color:#9b3e22; font-weight:800;">CORREO</span><br><a href="mailto:nicolas@unova.edu.mx" style="font-size:11px; color:#222;">nicolas@unova.edu.mx</a><h4 style="font-size:13px;">Nicolas Giles</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Subdirector General</span></div></div>
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:12px; display:flex; align-items:center; gap:10px; width:280px; border-right:5px solid #9b3e22;"><div class="avatar-espacio" style="width:45px; height:45px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/marcos.jpg" alt="Marcos" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><span class="etiqueta-correo" style="font-size:9px; color:#9b3e22; font-weight:800;">CORREO</span><br><a href="mailto:marcos@unova.edu.mx" style="font-size:11px; color:#222;">marcos@unova.edu.mx</a><h4 style="font-size:13px;">Marcos Arif</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Gerente de Operaciones</span></div></div>
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:12px; display:flex; align-items:center; gap:10px; width:280px; border-right:5px solid #9b3e22;"><div class="avatar-espacio" style="width:45px; height:45px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/persona4.jpg" alt="Valeria" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><span class="etiqueta-correo" style="font-size:9px; color:#9b3e22; font-weight:800;">CORREO</span><br><a href="mailto:valeria@unova.edu.mx" style="font-size:11px; color:#222;">valeria@unova.edu.mx</a><h4 style="font-size:13px;">Valeria Soto</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Directora Académica</span></div></div>
+                        </div>
+
+                        <div class="linea-vertical" style="width:2px; height:20px; background:#2c5339;"></div>
+
+                        <!-- Nivel 3 (5 personas) -->
+                        <div style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:10px; display:flex; align-items:center; gap:8px; width:220px; border-right:4px solid #9b3e22;"><div class="avatar-espacio" style="width:40px; height:40px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/persona5.jpg" alt="Estefania" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><a href="mailto:estefania@unova.edu.mx" style="font-size:10px; color:#222;">estefania@unova...</a><h4 style="font-size:12px;">Estefania Asseneth</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Recursos Humanos</span></div></div>
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:10px; display:flex; align-items:center; gap:8px; width:220px; border-right:4px solid #9b3e22;"><div class="avatar-espacio" style="width:40px; height:40px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/persona6.jpg" alt="Juan" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><a href="mailto:juan@unova.edu.mx" style="font-size:10px; color:#222;">juan@unova...</a><h4 style="font-size:12px;">Juan Ocampo</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Jefe de Marketing</span></div></div>
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:10px; display:flex; align-items:center; gap:8px; width:220px; border-right:4px solid #9b3e22;"><div class="avatar-espacio" style="width:40px; height:40px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/persona7.jpg" alt="Eder" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><a href="mailto:eder@unova.edu.mx" style="font-size:10px; color:#222;">eder@unova...</a><h4 style="font-size:12px;">Eder Martínez</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Coordinador Reservas</span></div></div>
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:10px; display:flex; align-items:center; gap:8px; width:220px; border-right:4px solid #9b3e22;"><div class="avatar-espacio" style="width:40px; height:40px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/persona8.jpg" alt="Sofia" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><a href="mailto:sofia@unova.edu.mx" style="font-size:10px; color:#222;">sofia@unova...</a><h4 style="font-size:12px;">Sofía Morales</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Jefa de Finanzas</span></div></div>
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:10px; display:flex; align-items:center; gap:8px; width:220px; border-right:4px solid #9b3e22;"><div class="avatar-espacio" style="width:40px; height:40px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/persona9.jpg" alt="Carlos" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><a href="mailto:carlos@unova.edu.mx" style="font-size:10px; color:#222;">carlos@unova...</a><h4 style="font-size:12px;">Carlos Pineda</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Sistemas y TI</span></div></div>
+                        </div>
+
+                        <div class="linea-vertical" style="width:2px; height:20px; background:#2c5339;"></div>
+
+                        <!-- Nivel 4 (5 personas para completar exactamente 14) -->
+                        <div style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:10px; display:flex; align-items:center; gap:8px; width:220px; border-right:4px solid #9b3e22;"><div class="avatar-espacio" style="width:40px; height:40px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/persona10.jpg" alt="Lucía" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><a href="mailto:lucia@unova.edu.mx" style="font-size:10px; color:#222;">lucia@unova...</a><h4 style="font-size:12px;">Lucía Méndez</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Asistente Rectoría</span></div></div>
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:10px; display:flex; align-items:center; gap:8px; width:220px; border-right:4px solid #9b3e22;"><div class="avatar-espacio" style="width:40px; height:40px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/persona11.jpg" alt="David" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><a href="mailto:david@unova.edu.mx" style="font-size:10px; color:#222;">david@unova...</a><h4 style="font-size:12px;">David Rivas</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Soporte Técnico</span></div></div>
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:10px; display:flex; align-items:center; gap:8px; width:220px; border-right:4px solid #9b3e22;"><div class="avatar-espacio" style="width:40px; height:40px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/persona12.jpg" alt="Andrea" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><a href="mailto:andrea@unova.edu.mx" style="font-size:10px; color:#222;">andrea@unova...</a><h4 style="font-size:12px;">Andrea Beltrán</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Admisiones</span></div></div>
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:10px; display:flex; align-items:center; gap:8px; width:220px; border-right:4px solid #9b3e22;"><div class="avatar-espacio" style="width:40px; height:40px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/persona13.jpg" alt="Miguel" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><a href="mailto:miguel@unova.edu.mx" style="font-size:10px; color:#222;">miguel@unova...</a><h4 style="font-size:12px;">Miguel Ángel</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Logística Campus</span></div></div>
+                            <div class="nodo-organigrama" style="background:#fff; border:2px solid #2c5339; border-radius:12px; padding:10px; display:flex; align-items:center; gap:8px; width:220px; border-right:4px solid #9b3e22;"><div class="avatar-espacio" style="width:40px; height:40px; border-radius:50%; background:#e8f0e9; overflow:hidden;"><img src="img/persona14.jpg" alt="Fernanda" style="width:100%; height:100%; object-fit:cover;"></div><div class="nodo-info" style="text-align:left;"><a href="mailto:fernanda@unova.edu.mx" style="font-size:10px; color:#222;">fernanda@unova...</a><h4 style="font-size:12px;">Fernanda Ríos</h4><span style="font-size:10px; color:#2c5339; font-weight:700;">Atención Alumnos</span></div></div>
+                        </div>
+
                     </div>
                 </div>
-            </section>
-        </div>
 
-        <!-- 3. VISTA: MENÚ -->
-        <div id="vista-menu" class="vista-pagina">
-            <section class="seccion fondo-suave">
-                <div class="contenedor">
-                    <div class="titulo-seccion">
-                        <span class="etiqueta-seccion">OFERTA EDUCATIVA</span>
-                        <h2>Menú Académico</h2>
-                        <div class="linea"></div>
-                        <p class="subtitulo-seccion">Explora los programas de formación técnica y profesional disponibles.</p>
-                    </div>
-
-                    <div class="valores-grid">
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
-                            <h3>Tecnología e Ingeniería</h3>
-                            <p>Ingeniería en Sistemas, Desarrollo Web y Ciberseguridad.</p>
-                        </div>
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
-                            <h3>Negocios</h3>
-                            <p>Administración de Empresas, Mercadotecnia y Finanzas.</p>
-                        </div>
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div>
-                            <h3>Ciencias Naturales</h3>
-                            <p>Desarrollo Sustentable, Ecología y Botánica Aplicada.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- 4. VISTA: CONTACTO -->
-        <div id="vista-contacto" class="vista-pagina">
-            <section class="seccion fondo-gris">
-                <div class="contenedor">
-                    <div class="titulo-seccion">
-                        <span class="etiqueta-seccion">ESTAMOS PARA AYUDARTE</span>
-                        <h2>Contacto</h2>
-                        <div class="linea"></div>
-                    </div>
-
-                    <div class="contacto-grid">
-                        <div class="informacion-contacto">
-                            <h3>Universidad NovaTech del Valle</h3>
-                            <p>Ponte en contacto con nosotros para asesoría personalizada.</p>
-                            <div class="dato-contacto"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><div><strong>Dirección</strong><span>Av. Universidad 250</span></div></div>
-                            <div class="dato-contacto"><i class="fa-solid fa-phone" aria-hidden="true"></i><div><strong>Teléfono</strong><span>777 000 2026</span></div></div>
-                        </div>
-
-                        <div class="formulario">
-                            <h3>Solicita información</h3>
-                            <form id="formContacto">
-                                <div class="campo"><label for="nombre">Nombre completo</label><input type="text" id="nombre" placeholder="Escribe tu nombre"></div>
-                                <div class="campo"><label for="correo">Correo electrónico</label><input type="email" id="correo" placeholder="ejemplo@correo.com"></div>
-                                <div class="campo"><label for="asunto">Asunto</label><select id="asunto"><option value="">Selecciona un motivo</option><option value="admisiones">Admisiones</option></select></div>
-                                <div class="campo"><label for="mensaje">Mensaje</label><textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí"></textarea></div>
-                                <button type="submit" class="btn-formulario">Enviar mensaje</button>
-                            </form>
-                            <div id="mensajeFormulario"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
 
-    <!-- FOOTER Y REDES SOCIALES -->
-    <footer>
-        <div class="contenedor">
-            <div class="redes-sociales">
-                <a href="#" aria-label="Visitar nuestro Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-                <a href="#" aria-label="Visitar nuestro Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                <a href="#" aria-label="Visitar nuestro Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
-                <a href="#" aria-label="Visitar nuestro LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Universidad NovaTech del Valle. Todos los derechos reservados.</p>
-            </div>
+    <footer style="background:#1b2822; color:white; padding:30px 20px; margin-top:50px;">
+        <div class="redes-sociales" style="display:flex; justify-content:center; gap:20px; margin-bottom:15px;">
+            <a href="#" aria-label="Facebook" style="color:white; font-size:20px;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" style="color:white; font-size:20px;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter" style="color:white; font-size:20px;"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" style="color:white; font-size:20px;"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div class="footer-bottom" style="color:#ffffff; font-size:13px;">
+            <p>© 2026 Universidad NovaTech del Valle. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <!-- SCRIPTS ENLAZADOS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/funciones.js"></script>
 </body>

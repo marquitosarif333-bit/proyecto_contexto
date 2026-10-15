@@ -4,26 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universidad NovaTech del Valle | UNOVA</title>
-
-    <!-- PRECONEXIÓN RÁPIDA -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- ESTILOS GENERALES -->
     <link rel="stylesheet" href="css/styles.css">
-
-    <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
     <style>
-        /* ESTILOS ESPECÍFICOS PARA EL MENÚ MÓVIL ALINEADO A LA IZQUIERDA */
         @media(max-width: 800px) {
             .contenedor-header {
-                justify-content: flex-start;
-                gap: 15px;
+                justify-content: flex-start !important;
+                gap: 15px !important;
             }
             #btnMenu {
-                display: flex;
+                display: flex !important;
                 order: 1;
             }
             .logo {
@@ -44,7 +36,7 @@
                 z-index: 1000;
             }
             nav.mostrar {
-                display: flex;
+                display: flex !important;
             }
             nav .enlace-menu {
                 width: 80%;
@@ -54,9 +46,7 @@
         }
     </style>
 </head>
-
 <body>
-
     <div id="preloader">
         <div class="loader"></div>
         <p>Cargando UNOVA...</p>
@@ -66,246 +56,69 @@
         <i class="fa-solid fa-cloud-arrow-up"></i>
     </button>
 
-    <!-- HEADER / NAVEGACIÓN PRINCIPAL -->
     <header id="header">
-        <div class="contenedor-header">
-            <button id="btnMenu" type="button" aria-label="Abrir menú">
+        <div class="contenedor-header" style="max-width:1250px; margin:auto; display:flex; align-items:center; justify-content:space-between; height:75px;">
+            <button id="btnMenu" type="button" aria-label="Abrir menú" style="display:none; border:none; background:none; font-size:24px; color:#1b2822; cursor:pointer;">
                 <i class="fa-solid fa-bars"></i>
             </button>
-
-            <div class="logo">
+            <div class="logo" style="display:flex; align-items:center; gap:10px;">
                 <div class="logo-icono"><i class="fa-solid fa-tree"></i></div>
-                <div class="logo-texto">
+                <div class="logo-texto" style="text-align:left;">
                     <h1>UNOVA</h1>
                     <span style="color: #4a5550; font-weight: 600;">Universidad NovaTech del Valle</span>
                 </div>
             </div>
-
             <nav id="menu">
-                <a href="#inicio" class="enlace-menu activo">Inicio</a>
-                <a href="#nosotros" class="enlace-menu">Nosotros</a>
-                <a href="#menu-seccion" class="enlace-menu">Menú</a>
-                <a href="#contacto" class="enlace-menu boton-contacto">Contacto</a>
+                <a href="index.html" class="enlace-menu activo">Inicio</a>
+                <a href="nosotros.html" class="enlace-menu">Nosotros</a>
+                <a href="menu.html" class="enlace-menu">Menú</a>
+                <a href="contacto.html" class="enlace-menu boton-contacto">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- 1. VISTA: INICIO -->
-        <div id="vista-inicio" class="vista-pagina activa">
-            <section class="hero" style="justify-content: center; text-align: center;">
-                <div class="slider">
-                    <div class="slide activo">
-                        <img src="img/universidad.jpg" alt="Campus estilo Ghibli" style="margin: 0 auto;">
-                    </div>
+    <main style="margin-top: 75px;">
+        <section class="hero" style="justify-content: center; text-align: center; height: 500px; position: relative; display: flex; align-items: center; overflow: hidden; background: linear-gradient(90deg, rgba(27, 40, 34, 0.88), rgba(44, 83, 57, 0.75));">
+            <div class="slider" style="position: absolute; inset: 0;">
+                <div class="slide activo" style="position: absolute; inset: 0;">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=60" alt="Campus estilo Ghibli" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-
-                <div class="hero-contenido" style="text-align: center; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
-                    <span class="etiqueta" style="background: rgba(0,0,0,0.5); color: #ffffff; font-weight: 700;">🌱 EDUCACIÓN • INNOVACIÓN • NATURALEZA</span>
-                    <h2>Formando el futuro, <span style="color: #ffe599;">transformando el presente.</span></h2>
-                    <p style="color: #ffffff; font-weight: 500;">Una experiencia educativa inspiradora, integrada con la innovación y el desarrollo humano integral.</p>
-                    <div class="hero-botones" style="justify-content: center;">
-                        <a href="#nosotros" class="btn-principal enlace-menu">Conócenos</a>
-                        <a href="#contacto" class="btn-secundario enlace-menu">Contacto</a>
-                    </div>
+            </div>
+            <div class="hero-contenido" style="text-align: center; margin: 0 auto; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2; color: #ffffff; width: 90%;">
+                <span class="etiqueta" style="background: rgba(0,0,0,0.65); color: #ffffff; font-weight: 700; padding: 6px 14px; border-radius: 12px; font-size: 12px; margin-bottom: 15px;">🌱 EDUCACIÓN • INNOVACIÓN • NATURALEZA</span>
+                <h2 style="font-size: clamp(32px, 5vw, 54px); margin-bottom: 18px;">Formando el futuro, <span style="color: #ffe599;">transformando el presente.</span></h2>
+                <p style="color: #ffffff; font-weight: 500; font-size: 16px; margin-bottom: 25px;">Una experiencia educativa inspiradora, integrada con la innovación y el desarrollo humano integral.</p>
+                <div class="hero-botones" style="display: flex; gap: 12px;">
+                    <a href="nosotros.html" class="btn-principal" style="background: #9b3e22; color: white; padding: 12px 24px; border-radius: 20px; font-weight: 800; text-decoration: none;">Conócenos</a>
+                    <a href="contacto.html" class="btn-secundario" style="border: 2px solid white; color: white; padding: 12px 24px; border-radius: 20px; font-weight: 800; text-decoration: none;">Contacto</a>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="estadisticas" style="background: #355841;">
-                <div class="contenedor estadisticas-grid">
-                    <div class="estadistica">
-                        <i class="fa-solid fa-user-graduate" style="color: #ffe599;"></i>
-                        <strong class="contador" data-numero="2500">2500+</strong>
-                        <span style="color: #ffffff; font-weight: 600;">Estudiantes</span>
-                    </div>
-                    <div class="estadistica">
-                        <i class="fa-solid fa-chalkboard-user" style="color: #ffe599;"></i>
-                        <strong class="contador" data-numero="180">180+</strong>
-                        <span style="color: #ffffff; font-weight: 600;">Docentes</span>
-                    </div>
-                    <div class="estadistica">
-                        <i class="fa-solid fa-book-open" style="color: #ffe599;"></i>
-                        <strong class="contador" data-numero="25">25+</strong>
-                        <span style="color: #ffffff; font-weight: 600;">Programas</span>
-                    </div>
-                    <div class="estadistica">
-                        <i class="fa-solid fa-award" style="color: #ffe599;"></i>
-                        <strong class="contador" data-numero="15">15+</strong>
-                        <span style="color: #ffffff; font-weight: 600;">Años de Magia</span>
-                    </div>
+        <section class="estadisticas" style="background: #2c5339; color: white; padding: 30px 0;">
+            <div class="contenedor" style="width: 90%; max-width: 1200px; margin: auto;">
+                <div class="estadisticas-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
+                    <div class="estadistica" style="text-align: center;"><i class="fa-solid fa-user-graduate" style="color: #ffe599; font-size: 24px;"></i><strong style="font-size: 30px; display: block;">2500+</strong><span style="font-size: 13px;">Estudiantes</span></div>
+                    <div class="estadistica" style="text-align: center;"><i class="fa-solid fa-chalkboard-user" style="color: #ffe599; font-size: 24px;"></i><strong style="font-size: 30px; display: block;">180+</strong><span style="font-size: 13px;">Docentes</span></div>
+                    <div class="estadistica" style="text-align: center;"><i class="fa-solid fa-book-open" style="color: #ffe599; font-size: 24px;"></i><strong style="font-size: 30px; display: block;">25+</strong><span style="font-size: 13px;">Programas</span></div>
+                    <div class="estadistica" style="text-align: center;"><i class="fa-solid fa-award" style="color: #ffe599; font-size: 24px;"></i><strong style="font-size: 30px; display: block;">15+</strong><span style="font-size: 13px;">Años de Magia</span></div>
                 </div>
-            </section>
-        </div>
-
-        <!-- 2. VISTA: NOSOTROS -->
-        <div id="vista-nosotros" class="vista-pagina">
-            <section class="seccion">
-                <div class="contenedor">
-                    <div class="titulo-seccion">
-                        <span>CONÓCENOS</span>
-                        <h2>Nuestra Identidad</h2>
-                        <div class="linea"></div>
-                    </div>
-
-                    <div class="mision-vision-contenedor">
-                        <div class="tarjeta-info tarjeta-mision">
-                            <i class="fa-solid fa-bullseye"></i>
-                            <h3>Misión</h3>
-                            <p>Formar profesionales íntegros, competitivos y comprometidos mediante un modelo educativo innovador.</p>
-                        </div>
-
-                        <div class="imagen-central-ghibli">
-                            <div class="circulo-decorativo"><i class="fa-solid fa-seedling"></i></div>
-                        </div>
-
-                        <div class="tarjeta-info tarjeta-vision">
-                            <i class="fa-solid fa-eye"></i>
-                            <h3>Visión</h3>
-                            <p>Ser reconocidos como una institución líder en educación superior por nuestra excelencia e impacto.</p>
-                        </div>
-                    </div>
-
-                    <div class="titulo-seccion margin-top-seccion">
-                        <span>PRINCIPIOS</span>
-                        <h2>Valores</h2>
-                        <div class="linea"></div>
-                    </div>
-
-                    <div class="valores-grid">
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-scale-balanced"></i></div>
-                            <h3>Integridad</h3>
-                            <p>Honestidad y transparencia.</p>
-                        </div>
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-leaf"></i></div>
-                            <h3>Excelencia</h3>
-                            <p>Crecimiento continuo.</p>
-                        </div>
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-lightbulb"></i></div>
-                            <h3>Innovación</h3>
-                            <p>Nuevas ideas para transformar.</p>
-                        </div>
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-handshake"></i></div>
-                            <h3>Respeto</h3>
-                            <p>Dignidad humana.</p>
-                        </div>
-                    </div>
-
-                    <!-- ORGANIGRAMA EN NOSOTROS -->
-                    <div id="organigrama" class="organigrama-seccion-integrada">
-                        <div class="titulo-seccion">
-                            <span>ESTRUCTURA INSTITUCIONAL</span>
-                            <h2>Organigrama</h2>
-                            <div class="linea"></div>
-                            <p class="subtitulo-org">Estructura de mando de los 13 integrantes (desliza sobre las cajas para ver correo o puesto completo).</p>
-                        </div>
-
-                        <div class="organigrama-tree">
-                            <div class="organigrama-nivel nivel-root">
-                                <div class="nodo-organigrama">
-                                    <div class="avatar-espacio"><img src="img/roman.jpg" alt="Román Gutiérrez"></div>
-                                    <div class="nodo-info">
-                                        <div class="header-tarjeta">
-                                            <span class="etiqueta-correo">CORREO</span>
-                                            <a href="mailto:roman@unova.edu.mx" class="correo">roman@unova.edu.mx</a>
-                                        </div>
-                                        <h4>Román Gutiérrez</h4>
-                                        <span class="puesto">Puesto: Director General / Rector</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- 3. VISTA: MENÚ -->
-        <div id="vista-menu" class="vista-pagina">
-            <section class="seccion fondo-suave">
-                <div class="contenedor">
-                    <div class="titulo-seccion">
-                        <span>OFERTA EDUCATIVA</span>
-                        <h2>Menú Académico</h2>
-                        <div class="linea"></div>
-                        <p class="subtitulo-seccion">Explora los programas de formación técnica y profesional disponibles.</p>
-                    </div>
-
-                    <div class="valores-grid">
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-laptop-code"></i></div>
-                            <h3>Tecnología e Ingeniería</h3>
-                            <p>Ingeniería en Sistemas, Desarrollo Web y Ciberseguridad.</p>
-                        </div>
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-chart-line"></i></div>
-                            <h3>Negocios</h3>
-                            <p>Administración de Empresas, Mercadotecnia y Finanzas.</p>
-                        </div>
-                        <div class="valor">
-                            <div class="valor-icono"><i class="fa-solid fa-seedling"></i></div>
-                            <h3>Ciencias Naturales</h3>
-                            <p>Desarrollo Sustentable, Ecología y Botánica Aplicada.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- 4. VISTA: CONTACTO -->
-        <div id="vista-contacto" class="vista-pagina">
-            <section class="seccion fondo-gris">
-                <div class="contenedor">
-                    <div class="titulo-seccion">
-                        <span>ESTAMOS PARA AYUDARTE</span>
-                        <h2>Contacto</h2>
-                        <div class="linea"></div>
-                    </div>
-
-                    <div class="contacto-grid">
-                        <div class="informacion-contacto">
-                            <h3>Universidad NovaTech del Valle</h3>
-                            <p>Ponte en contacto con nosotros para asesoría personalizada.</p>
-                            <div class="dato-contacto"><i class="fa-solid fa-location-dot"></i><div><strong>Dirección</strong><span>Av. Universidad 250</span></div></div>
-                            <div class="dato-contacto"><i class="fa-solid fa-phone"></i><div><strong>Teléfono</strong><span>777 000 2026</span></div></div>
-                        </div>
-
-                        <div class="formulario">
-                            <h3>Solicita información</h3>
-                            <form id="formContacto">
-                                <div class="campo"><label for="nombre">Nombre</label><input type="text" id="nombre" placeholder="Nombre"></div>
-                                <div class="campo"><label for="correo">Correo</label><input type="email" id="correo" placeholder="Correo"></div>
-                                <div class="campo"><label for="asunto">Asunto</label><select id="asunto"><option value="">Selecciona</option><option value="admisiones">Admisiones</option></select></div>
-                                <div class="campo"><label for="mensaje">Mensaje</label><textarea id="mensaje" rows="4" placeholder="Mensaje"></textarea></div>
-                                <button type="submit" class="btn-formulario">Enviar</button>
-                            </form>
-                            <div id="mensajeFormulario"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
 
-    <!-- FOOTER Y REDES SOCIALES -->
-    <footer>
-        <div class="contenedor">
-            <div class="redes-sociales">
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            </div>
-            <div class="footer-bottom" style="color: #d0ded4; font-size: 13px;">
-                <p>© 2026 Universidad NovaTech del Valle. Todos los derechos reservados.</p>
-            </div>
+    <footer style="background:#1b2822; color:white; padding:30px 20px; text-align: center;">
+        <div class="redes-sociales" style="display:flex; justify-content:center; gap:20px; margin-bottom:15px;">
+            <a href="#" aria-label="Facebook" style="color:white; font-size:20px;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" style="color:white; font-size:20px;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter" style="color:white; font-size:20px;"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" style="color:white; font-size:20px;"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div class="footer-bottom" style="color:#ffffff; font-size:13px;">
+            <p>© 2026 Universidad NovaTech del Valle. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- SCRIPTS ENLAZADOS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/funciones.js"></script>
 </body>

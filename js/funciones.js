@@ -294,3 +294,52 @@ $(document).ready(function () {
         this.reset();
     });
 });
+$(document).ready(function () {
+
+    // 1. PROTECCIÓN OBLIGATORIA DE SESIÓN
+    if (window.location.pathname.indexOf("login.html") === -1) {
+        if (localStorage.getItem("unova_sesion_activa") !== "true") {
+            window.location.href = "login.html";
+        }
+    }
+
+    /* PRELOADER */
+    $("#preloader").fadeOut(600);
+
+    /* MENÚ MÓVIL (TRES RAYITAS A LA IZQUIERDA) */
+    $("#btnMenu").click(function () {
+        $("#menu").toggleClass("mostrar");
+        $(this).find("i").toggleClass("fa-bars fa-xmark");
+    });
+
+    /* CERRAR MENÚ AL HACER CLIC EN UN ENLACE EN MÓVIL */
+    $(".enlace-menu").click(function () {
+        $("#menu").removeClass("mostrar");
+        $("#btnMenu i").removeClass("fa-xmark").addClass("fa-bars");
+    });
+
+    /* BOTÓN SUBIR AL INICIO */
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $("#btnArriba").fadeIn(300);
+        } else {
+            $("#btnArriba").fadeOut(300);
+        }
+    });
+
+    $("#btnArriba").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 500);
+    });
+
+    /* FORMULARIO DE CONTACTO */
+    $("#formContacto").submit(function (e) {
+        e.preventDefault();
+        let nombre = $.trim($("#nombre").val());
+        if (nombre === "") {
+            alert("Por favor escribe tu nombre.");
+            return;
+        }
+        alert("¡Solicitud enviada correctamente!");
+        this.reset();
+    });
+});
