@@ -14,6 +14,45 @@
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* ESTILOS ESPECÍFICOS PARA EL MENÚ MÓVIL ALINEADO A LA IZQUIERDA */
+        @media(max-width: 800px) {
+            .contenedor-header {
+                justify-content: flex-start;
+                gap: 15px;
+            }
+            #btnMenu {
+                display: flex;
+                order: 1;
+            }
+            .logo {
+                order: 2;
+            }
+            nav {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: rgba(252,248,242,0.98);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                border-bottom: 2px solid var(--border-soft);
+                display: none;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                z-index: 1000;
+            }
+            nav.mostrar {
+                display: flex;
+            }
+            nav .enlace-menu {
+                width: 80%;
+                text-align: center;
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -57,7 +96,7 @@
             <section class="hero" style="justify-content: center; text-align: center;">
                 <div class="slider">
                     <div class="slide activo">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=60" alt="Campus estilo Ghibli" style="margin: 0 auto;">
+                        <img src="img/universidad.jpg" alt="Campus estilo Ghibli" style="margin: 0 auto;">
                     </div>
                 </div>
 
