@@ -3,95 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universidad NovaTech del Valle | Nosotros</title>
+    <title>Universidad NovaTech del Valle | UNOVA</title>
+
+    <!-- PRECONEXIÓN RÁPIDA -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- HOJA DE ESTILOS -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body style="text-align: center;">
+
+<body>
+
+    <div id="preloader">
+        <div class="loader"></div>
+        <p>Cargando UNOVA...</p>
+    </div>
+
+    <button id="btnArriba" type="button" aria-label="Volver al inicio">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+    </button>
+
+    <!-- HEADER / NAVEGACIÓN PRINCIPAL -->
     <header id="header">
-        <div class="contenedor-header" style="max-width:1250px; margin:auto; display:flex; align-items:center; justify-content:space-between; height:75px;">
-            <div class="logo" style="display:flex; align-items:center; gap:10px;">
-                <div class="logo-icono"><i class="fa-solid fa-tree"></i></div>
-                <div class="logo-texto" style="text-align:left;">
+        <div class="contenedor-header">
+            <button id="btnMenu" type="button" aria-label="Abrir menú de navegación">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="logo">
+                <div class="logo-icono"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+                <div class="logo-texto">
                     <h1>UNOVA</h1>
-                    <span>Universidad NovaTech del Valle</span>
+                    <span class="subtitulo-logo">Universidad NovaTech del Valle</span>
                 </div>
             </div>
-            <nav id="menu">
-                <a href="index.html" class="enlace-menu">Inicio</a>
-                <a href="nosotros.html" class="enlace-menu activo">Nosotros</a>
-                <a href="menu.html" class="enlace-menu">Menú</a>
-                <a href="contacto.html" class="enlace-menu boton-contacto">Contacto</a>
+
+            <nav id="menu" aria-label="Menú principal">
+                <a href="#inicio" class="enlace-menu activo">Inicio</a>
+                <a href="#nosotros" class="enlace-menu">Nosotros</a>
+                <a href="#menu-seccion" class="enlace-menu">Menú</a>
+                <a href="#contacto" class="enlace-menu boton-contacto">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <main style="margin-top: 100px;">
-        <section class="seccion">
-            <div class="contenedor" style="max-width:1200px; margin:auto;">
-                <div class="titulo-seccion">
-                    <span>CONÓCENOS</span>
-                    <h2>Nuestra Identidad</h2>
-                    <div class="linea"></div>
-                </div>
-
-                <div class="mision-vision-contenedor" style="display:flex; justify-content:center; gap:25px; flex-wrap:wrap;">
-                    <div class="tarjeta-info tarjeta-mision" style="flex:1; min-width:280px;">
-                        <i class="fa-solid fa-bullseye"></i>
-                        <h3>Misión</h3>
-                        <p>Formar profesionales íntegros, competitivos y comprometidos mediante un modelo educativo innovador.</p>
-                    </div>
-                    <div class="tarjeta-info tarjeta-vision" style="flex:1; min-width:280px;">
-                        <i class="fa-solid fa-eye"></i>
-                        <h3>Visión</h3>
-                        <p>Ser reconocidos como una institución líder en educación superior por nuestra excelencia e impacto.</p>
+    <main>
+        <!-- 1. VISTA: INICIO -->
+        <div id="vista-inicio" class="vista-pagina activa">
+            <section class="hero">
+                <div class="slider">
+                    <div class="slide activo">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=60" alt="Campus universitario estilo Ghibli con amplias áreas verdes">
                     </div>
                 </div>
 
-                <!-- ORGANIGRAMA -->
-                <div id="organigrama" class="organigrama-seccion-integrada" style="margin-top:60px;">
+                <div class="hero-contenido">
+                    <span class="etiqueta">🌱 EDUCACIÓN • INNOVACIÓN • NATURALEZA</span>
+                    <h2>Formando el futuro, <span>transformando el presente.</span></h2>
+                    <p>Una experiencia educativa inspiradora, integrada con la innovación y el desarrollo humano integral.</p>
+                    <div class="hero-botones">
+                        <a href="#nosotros" class="btn-principal enlace-menu">Conócenos</a>
+                        <a href="#contacto" class="btn-secundario enlace-menu">Contacto</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="estadisticas">
+                <div class="contenedor estadisticas-grid">
+                    <div class="estadistica">
+                        <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                        <strong class="contador" data-numero="2500">2500+</strong>
+                        <span>Estudiantes</span>
+                    </div>
+                    <div class="estadistica">
+                        <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                        <strong class="contador" data-numero="180">180+</strong>
+                        <span>Docentes</span>
+                    </div>
+                    <div class="estadistica">
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                        <strong class="contador" data-numero="25">25+</strong>
+                        <span>Programas</span>
+                    </div>
+                    <div class="estadistica">
+                        <i class="fa-solid fa-award" aria-hidden="true"></i>
+                        <strong class="contador" data-numero="15">15+</strong>
+                        <span>Años de Magia</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 2. VISTA: NOSOTROS (HISTORIA Y ORGANIGRAMA) -->
+        <div id="vista-nosotros" class="vista-pagina">
+            <section class="seccion">
+                <div class="contenedor">
                     <div class="titulo-seccion">
-                        <span>ESTRUCTURA INSTITUCIONAL</span>
-                        <h2>Organigrama</h2>
+                        <span class="etiqueta-seccion">CONÓCENOS</span>
+                        <h2>Nuestra Identidad</h2>
                         <div class="linea"></div>
                     </div>
 
-                    <div class="organigrama-tree">
-                        <div class="organigrama-nivel nivel-root">
-                            <div class="nodo-organigrama">
-                                <div class="avatar-espacio"><img src="img/marcos.jpeg" alt="Marcos Arif Hernandez Ostos"></div>
-                                <div class="nodo-info" style="text-align:left;">
-                                    <div class="header-tarjeta"><span class="etiqueta-correo">CORREO</span><a href="mailto:marcos@unova.edu.mx" class="correo">marcos@unova.edu.mx</a></div>
-                                    <h4>Marcos Arif Hernandez Ostos</h4>
-                                    <span class="puesto">Puesto: Director General / Rector</span>
+                    <div class="mision-vision-contenedor">
+                        <div class="tarjeta-info tarjeta-mision">
+                            <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                            <h3>Misión</h3>
+                            <p>Formar profesionales íntegros, competitivos y comprometidos mediante un modelo educativo innovador.</p>
+                        </div>
+
+                        <div class="imagen-central-ghibli">
+                            <div class="circulo-decorativo"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div>
+                        </div>
+
+                        <div class="tarjeta-info tarjeta-vision">
+                            <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                            <h3>Visión</h3>
+                            <p>Ser reconocidos como una institución líder en educación superior por nuestra excelencia e impacto.</p>
+                        </div>
+                    </div>
+
+                    <div class="titulo-seccion margin-top-seccion">
+                        <span class="etiqueta-seccion">PRINCIPIOS</span>
+                        <h2>Valores</h2>
+                        <div class="linea"></div>
+                    </div>
+
+                    <div class="valores-grid">
+                        <div class="valor">
+                            <div class="valor-icono"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
+                            <h3>Integridad</h3>
+                            <p>Honestidad y transparencia.</p>
+                        </div>
+                        <div class="valor">
+                            <div class="valor-icono"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+                            <h3>Excelencia</h3>
+                            <p>Crecimiento continuo.</p>
+                        </div>
+                        <div class="valor">
+                            <div class="valor-icono"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
+                            <h3>Innovación</h3>
+                            <p>Nuevas ideas para transformar.</p>
+                        </div>
+                        <div class="valor">
+                            <div class="valor-icono"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+                            <h3>Respeto</h3>
+                            <p>Dignidad humana.</p>
+                        </div>
+                    </div>
+
+                    <!-- ORGANIGRAMA INTEGRADO -->
+                    <div id="organigrama" class="organigrama-seccion-integrada">
+                        <div class="titulo-seccion">
+                            <span class="etiqueta-seccion">ESTRUCTURA INSTITUCIONAL</span>
+                            <h2>Organigrama</h2>
+                            <div class="linea"></div>
+                            <p class="subtitulo-org">Estructura de mando de los integrantes del equipo directivo y académico.</p>
+                        </div>
+
+                        <div class="organigrama-tree">
+                            <!-- Nivel 1 -->
+                            <div class="organigrama-nivel nivel-root">
+                                <div class="nodo-organigrama">
+                                    <div class="avatar-espacio"><img src="img/roman.jpg" alt="Fotografía de Marcos Arif Hernandez Ostos"></div>
+                                    <div class="nodo-info">
+                                        <div class="header-tarjeta">
+                                            <span class="etiqueta-correo">CORREO</span>
+                                            <a href="mailto:marcos@unova.edu.mx" class="correo">marcos@unova.edu.mx</a>
+                                        </div>
+                                        <h3>Marcos Arif Hernandez Ostos</h3>
+                                        <span class="puesto">Puesto: Director General / Rector</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="linea-vertical"></div>
+
+                            <!-- Nivel 2 -->
+                            <div class="organigrama-nivel nivel-sub">
+                                <div class="rama">
+                                    <div class="nodo-organigrama">
+                                        <div class="avatar-espacio"><img src="img/nicolas.jpg" alt="Fotografía de Nicolas Giles"></div>
+                                        <div class="nodo-info">
+                                            <div class="header-tarjeta">
+                                                <span class="etiqueta-correo">CORREO</span>
+                                                <a href="mailto:nicolas@unova.edu.mx" class="correo">nicolas@unova.edu.mx</a>
+                                            </div>
+                                            <h3>Nicolas Giles</h3>
+                                            <span class="puesto">Puesto: Subdirector General</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rama">
+                                    <div class="nodo-organigrama">
+                                        <div class="avatar-espacio"><img src="img/roman_g.jpg" alt="Fotografía de Román Gutiérrez"></div>
+                                        <div class="nodo-info">
+                                            <div class="header-tarjeta">
+                                                <span class="etiqueta-correo">CORREO</span>
+                                                <a href="mailto:roman@unova.edu.mx" class="correo">roman@unova.edu.mx</a>
+                                            </div>
+                                            <h3>Román Gutiérrez</h3>
+                                            <span class="puesto">Puesto: Gerente de Operaciones</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="linea-vertical"></div>
-                        <div class="organigrama-nivel nivel-sub">
-                            <div class="rama"><div class="nodo-organigrama"><div class="avatar-espacio"><img src="img/nick.jpeg" alt="Nicolas Giles Calva"></div><div class="nodo-info" style="text-align:left;"><div class="header-tarjeta"><span class="etiqueta-correo">CORREO</span><a href="mailto:nicolas@unova.edu.mx" class="correo">nicolas@unova.edu.mx</a></div><h4>Nicolas Giles Calva</h4><span class="puesto">Puesto: Subdirector General</span></div></div></div>
-                            <div class="rama"><div class="nodo-organigrama"><div class="avatar-espacio"><img src="img/roman.jpeg" alt="Román Gutiérrez Ocampo"></div><div class="nodo-info" style="text-align:left;"><div class="header-tarjeta"><span class="etiqueta-correo">CORREO</span><a href="mailto:roman@unova.edu.mx" class="correo">roman@unova.edu.mx</a></div><h4>Román Gutiérrez Ocampo</h4><span class="puesto">Puesto: Gerente de Operaciones</span></div></div></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 3. VISTA: MENÚ -->
+        <div id="vista-menu" class="vista-pagina">
+            <section class="seccion fondo-suave">
+                <div class="contenedor">
+                    <div class="titulo-seccion">
+                        <span class="etiqueta-seccion">OFERTA EDUCATIVA</span>
+                        <h2>Menú Académico</h2>
+                        <div class="linea"></div>
+                        <p class="subtitulo-seccion">Explora los programas de formación técnica y profesional disponibles.</p>
+                    </div>
+
+                    <div class="valores-grid">
+                        <div class="valor">
+                            <div class="valor-icono"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
+                            <h3>Tecnología e Ingeniería</h3>
+                            <p>Ingeniería en Sistemas, Desarrollo Web y Ciberseguridad.</p>
+                        </div>
+                        <div class="valor">
+                            <div class="valor-icono"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+                            <h3>Negocios</h3>
+                            <p>Administración de Empresas, Mercadotecnia y Finanzas.</p>
+                        </div>
+                        <div class="valor">
+                            <div class="valor-icono"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div>
+                            <h3>Ciencias Naturales</h3>
+                            <p>Desarrollo Sustentable, Ecología y Botánica Aplicada.</p>
                         </div>
                     </div>
                 </div>
+            </section>
+        </div>
 
-            </div>
-        </section>
+        <!-- 4. VISTA: CONTACTO -->
+        <div id="vista-contacto" class="vista-pagina">
+            <section class="seccion fondo-gris">
+                <div class="contenedor">
+                    <div class="titulo-seccion">
+                        <span class="etiqueta-seccion">ESTAMOS PARA AYUDARTE</span>
+                        <h2>Contacto</h2>
+                        <div class="linea"></div>
+                    </div>
+
+                    <div class="contacto-grid">
+                        <div class="informacion-contacto">
+                            <h3>Universidad NovaTech del Valle</h3>
+                            <p>Ponte en contacto con nosotros para asesoría personalizada.</p>
+                            <div class="dato-contacto"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><div><strong>Dirección</strong><span>Av. Universidad 250</span></div></div>
+                            <div class="dato-contacto"><i class="fa-solid fa-phone" aria-hidden="true"></i><div><strong>Teléfono</strong><span>777 000 2026</span></div></div>
+                        </div>
+
+                        <div class="formulario">
+                            <h3>Solicita información</h3>
+                            <form id="formContacto">
+                                <div class="campo"><label for="nombre">Nombre completo</label><input type="text" id="nombre" placeholder="Escribe tu nombre"></div>
+                                <div class="campo"><label for="correo">Correo electrónico</label><input type="email" id="correo" placeholder="ejemplo@correo.com"></div>
+                                <div class="campo"><label for="asunto">Asunto</label><select id="asunto"><option value="">Selecciona un motivo</option><option value="admisiones">Admisiones</option></select></div>
+                                <div class="campo"><label for="mensaje">Mensaje</label><textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí"></textarea></div>
+                                <button type="submit" class="btn-formulario">Enviar mensaje</button>
+                            </form>
+                            <div id="mensajeFormulario"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <footer style="background:#2c3e35; color:white; padding:30px 20px;">
-        <div class="redes-sociales" style="display:flex; justify-content:center; gap:20px; margin-bottom:15px;">
-            <a href="#" aria-label="Facebook" style="color:white; font-size:20px;"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram" style="color:white; font-size:20px;"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="Twitter" style="color:white; font-size:20px;"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn" style="color:white; font-size:20px;"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-        <div class="footer-bottom" style="color:#839489; font-size:11px;">
-            <p>© 2026 Universidad NovaTech del Valle. Todos los derechos reservados.</p>
+    <!-- FOOTER Y REDES SOCIALES -->
+    <footer>
+        <div class="contenedor">
+            <div class="redes-sociales">
+                <a href="#" aria-label="Visitar nuestro Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Visitar nuestro Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Visitar nuestro Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Visitar nuestro LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Universidad NovaTech del Valle. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
+
+    <!-- SCRIPTS ENLAZADOS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/funciones.js"></script>
 </body>

@@ -1,16 +1,17 @@
 /* =========================================================
-   VARIABLES Y ESTILOS GENERALES - STUDIO GHIBLI
+   VARIABLES Y ACCESIBILIDAD ALTA WCAG AA - STUDIO GHIBLI
 ========================================================= */
 :root {
     --bg-main: #fcf8f2;
-    --green-ghibli: #4a7c59;
+    --green-ghibli: #2c5339;
     --green-light: #e8f0e9;
-    --sky-blue: #6ba3be;
-    --terracotta: #c86d51;
-    --wood-dark: #2c3e35;
-    --text-dark: #333333;
+    --sky-blue: #2c6885;
+    --terracotta: #802f15; /* Terracotta oscuro de alto contraste */
+    --wood-dark: #1b2822;
+    --text-dark: #222222;  /* Texto principal oscuro para máximo contraste */
+    --text-muted: #2d3832; /* Texto secundario oscurecido para pasar WAVE */
     --card-bg: #ffffff;
-    --border-soft: #e2ded4;
+    --border-soft: #d3cdbf;
 }
 
 *, *::before, *::after {
@@ -38,7 +39,7 @@ body {
     margin: 0 auto;
 }
 
-/* SISTEMA DE VISTAS DINÁMICAS (PÁGINAS) */
+/* SISTEMA DE VISTAS DINÁMICAS */
 .vista-pagina {
     display: none;
     opacity: 0;
@@ -58,7 +59,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(252, 248, 242, 0.96);
+    background: rgba(252, 248, 242, 0.98);
     border-bottom: 2px solid var(--border-soft);
 }
 
@@ -99,10 +100,11 @@ header {
     color: var(--wood-dark);
 }
 
-.logo-texto span {
+.subtitulo-logo {
     display: block;
-    font-size: 10px;
-    color: #626c66;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
 }
 
 nav {
@@ -113,7 +115,7 @@ nav {
 
 .enlace-menu {
     padding: 8px 14px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--wood-dark);
     border-radius: 18px;
@@ -122,13 +124,13 @@ nav {
 }
 
 .enlace-menu:hover, .enlace-menu.activo {
-    color: var(--green-ghibli);
-    background: var(--green-light);
+    color: #ffffff;
+    background: var(--green-ghibli);
 }
 
 .boton-contacto {
     background: var(--terracotta);
-    color: white !important;
+    color: #ffffff !important;
 }
 
 #btnMenu {
@@ -146,27 +148,34 @@ nav {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
-    background: linear-gradient(90deg, rgba(44,62,53,0.85), rgba(74,124,89,0.5));
+    background: linear-gradient(90deg, rgba(27, 40, 34, 0.88), rgba(44, 83, 57, 0.75));
+    text-align: center;
 }
 
 .hero-contenido {
     width: 90%;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     position: relative;
     z-index: 2;
-    color: white;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .etiqueta {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 5px 12px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #ffffff;
+    padding: 6px 14px;
     border-radius: 12px;
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 800;
     margin-bottom: 15px;
+    letter-spacing: 0.5px;
 }
 
 .hero h2 {
@@ -174,17 +183,19 @@ nav {
     margin: 0 auto 18px auto;
     font-size: clamp(32px, 5vw, 54px);
     line-height: 1.15;
+    color: #ffffff;
 }
 
 .hero h2 span {
-    color: #f7d58b;
+    color: #ffe89e;
 }
 
 .hero p {
     max-width: 580px;
     margin: 0 auto 25px auto;
     font-size: 16px;
-    color: #e9f0ec;
+    color: #ffffff;
+    font-weight: 500;
 }
 
 .hero-botones {
@@ -197,24 +208,25 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 22px;
+    padding: 12px 24px;
     border-radius: 20px;
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 800;
     text-decoration: none;
 }
 
 .btn-principal {
     background: var(--terracotta);
-    color: white;
+    color: #ffffff;
 }
 
 .btn-secundario {
-    border: 2px solid white;
-    color: white;
+    border: 2px solid #ffffff;
+    background: rgba(0,0,0,0.2);
+    color: #ffffff;
 }
 
-/* SECCIONES Y TARJETAS */
+/* SECCIONES Y TARJETAS (MENÚ Y OTROS) */
 .seccion {
     padding: 70px 0;
 }
@@ -228,10 +240,10 @@ nav {
     margin-bottom: 40px;
 }
 
-.titulo-seccion > span {
+.etiqueta-seccion {
     color: var(--terracotta);
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 800;
     letter-spacing: 2px;
 }
 
@@ -241,9 +253,10 @@ nav {
 }
 
 .subtitulo-seccion, .subtitulo-org {
-    font-size: 13px;
-    color: #626c66;
-    margin-top: 8px;
+    font-size: 15px;
+    color: var(--text-dark); /* Color oscuro de alto contraste */
+    margin-top: 10px;
+    font-weight: 600;
 }
 
 .linea {
@@ -314,25 +327,39 @@ nav {
 .valor {
     background: white;
     border-radius: 12px;
-    padding: 25px 15px;
+    padding: 25px 20px;
     text-align: center;
     border: 1px solid var(--border-soft);
 }
 
+.valor h3 {
+    font-size: 18px;
+    color: var(--wood-dark);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Párrafos dentro de las tarjetas del menú con alto contraste */
+.valor p {
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
 .valor-icono {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 12px;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
     border-radius: 50%;
     background: #fdf3ee;
     color: var(--terracotta);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 22px;
 }
 
-/* ORGANIGRAMA ESTILIZADO */
+/* ORGANIGRAMA ESTILIZADO CON CONTRASTE */
 .organigrama-seccion-integrada {
     margin-top: 60px;
     padding-top: 40px;
@@ -352,19 +379,19 @@ nav {
     background: #ffffff;
     border: 2px solid var(--green-ghibli);
     border-radius: 12px;
-    padding: 12px 16px;
+    padding: 14px 18px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    min-width: 280px;
-    max-width: 320px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border-right: 4px solid var(--terracotta);
+    gap: 14px;
+    min-width: 300px;
+    max-width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    border-right: 5px solid var(--terracotta);
 }
 
 .avatar-espacio {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     background: var(--green-light);
     border: 2px dashed var(--green-ghibli);
@@ -387,30 +414,39 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 5px;
+    gap: 6px;
 }
 
 .etiqueta-correo {
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 800;
     color: var(--terracotta);
 }
 
 .nodo-info .correo {
-    font-size: 11px;
-    color: #626c66;
+    font-size: 12px;
+    color: var(--text-dark);
+    font-weight: 600;
     text-decoration: none;
 }
 
-.nodo-info h4 {
-    font-size: 14px;
+.nodo-info .correo:hover {
+    color: var(--terracotta);
+}
+
+.nodo-info h3 {
+    font-size: 15px;
     color: var(--wood-dark);
+    font-weight: 700;
+    margin-top: 2px;
 }
 
 .nodo-info .puesto {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--green-ghibli);
-    font-weight: 600;
+    font-weight: 700;
+    margin-top: 2px;
+    display: block;
 }
 
 .linea-vertical {
@@ -452,9 +488,10 @@ nav {
 
 .campo label {
     display: block;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     margin-bottom: 5px;
+    color: var(--wood-dark);
 }
 
 .campo input, .campo select, .campo textarea {
@@ -462,7 +499,7 @@ nav {
     border: 1px solid var(--border-soft);
     border-radius: 8px;
     padding: 10px;
-    font-size: 12px;
+    font-size: 13px;
     outline: none;
 }
 
@@ -470,18 +507,19 @@ nav {
     width: 100%;
     border: none;
     background: var(--green-ghibli);
-    color: white;
+    color: #ffffff;
     padding: 12px;
     border-radius: 18px;
-    font-weight: 700;
+    font-weight: 800;
+    font-size: 14px;
     cursor: pointer;
 }
 
 /* ESTADÍSTICAS Y FOOTER */
 .estadisticas {
     background: var(--green-ghibli);
-    color: white;
-    padding: 25px 0;
+    color: #ffffff;
+    padding: 30px 0;
 }
 
 .estadisticas-grid {
@@ -491,7 +529,7 @@ nav {
 
 .estadistica {
     text-align: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .estadistica:last-child {
@@ -499,24 +537,26 @@ nav {
 }
 
 .estadistica i {
-    font-size: 22px;
-    color: #f7d58b;
-    margin-bottom: 5px;
+    font-size: 24px;
+    color: #ffe89e;
+    margin-bottom: 6px;
 }
 
 .estadistica strong {
-    font-size: 28px;
+    font-size: 30px;
     display: block;
+    color: #ffffff;
 }
 
 .estadistica span {
-    font-size: 12px;
-    opacity: 0.9;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 footer {
     background: var(--wood-dark);
-    color: white;
+    color: #ffffff;
     padding: 30px 20px;
 }
 
@@ -528,31 +568,32 @@ footer {
 }
 
 .redes-sociales a {
-    color: white;
-    font-size: 20px;
+    color: #ffffff;
+    font-size: 22px;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .redes-sociales a:hover {
-    color: #f7d58b;
+    color: #ffe89e;
 }
 
 .footer-bottom {
-    color: #839489;
-    font-size: 11px;
+    color: #ffffff; /* Blanco nítido para cumplir contraste total */
+    font-size: 13px;
+    font-weight: 600;
 }
 
 #btnArriba {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     border: none;
     border-radius: 50%;
     background: var(--terracotta);
-    color: white;
+    color: #ffffff;
     cursor: pointer;
     display: none;
     z-index: 900;
@@ -567,7 +608,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #ffffff;
 }
 
 .loader {
@@ -581,6 +622,28 @@ footer {
 
 @keyframes girar {
     to { transform: rotate(360deg); }
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.slide.activo {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* RESPONSIVE MÓVIL */
